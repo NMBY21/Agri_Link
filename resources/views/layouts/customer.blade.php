@@ -5,12 +5,12 @@
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Carik Bali Agriculture</title>
+    <title>Agriculture</title>
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Pronia plant store bootstrap 5 template is an awesome website template for any home plant shop.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('customer/img/logo.png') }}" />
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('customer/img/logo.png') }}" /> --}}
 
     <!-- CSS
     ============================================ -->
@@ -49,8 +49,8 @@
                         <div class="col-lg-12">
                             <div class="header-middle-wrap position-relative">
                                 <div class="header-contact d-none d-lg-flex">
-                                    <i class="pe-7s-call"></i>
-                                    <a href="https://wa.me/+6281246312412">+6281246312412</a>
+                                    {{-- <i class="pe-7s-call"></i> --}}
+                                    {{-- <a href="https://wa.me/+6281246312412">+6281246312412</a> --}}
                                 </div>
 
                                 <a href="{{ url('/customer/dashboard') }}" class="header-logo">

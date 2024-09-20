@@ -5,12 +5,12 @@
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Carik Bali Agriculture</title>
+    <title>Agri Link</title>
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Pronia plant store bootstrap 5 template is an awesome website template for any home plant shop.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('customer/img/logo.png') }}" />
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('customer/img/logo.png') }}" /> --}}
 
     <!-- CSS
     ============================================ -->
@@ -49,12 +49,13 @@
                         <div class="col-lg-12">
                             <div class="header-middle-wrap position-relative">
                                 <div class="header-contact d-none d-lg-flex">
-                                    <i class="pe-7s-call"></i>
-                                    <a href="https://wa.me/+6281246312412">+6281246312412</a>
+                                    {{-- <i class="pe-7s-call"></i> --}}
+                                    {{-- <a href="https://wa.me/+6281246312412">+6281246312412</a> --}}
                                 </div>
 
                                 <a href="{{ url('/') }}" class="header-logo">
-                                    <img src="{{ asset('customer/img/logo.png') }}" height="100px" alt="Header Logo">
+                                    <h1>Agri Link</h1>
+                                    {{-- <img src="{{ asset('customer/img/logo.png') }}" height="100px" alt="Header Logo"> --}}
                                 </a>
 
                                 <div class="header-right">
@@ -88,19 +89,19 @@
                                 <nav class="main-nav">
                                     <ul>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/') }}">Beranda</a>
+                                            <a href="{{ url('/') }}">Home</a>
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/') }}#produk">Produk</a>
+                                            <a href="{{ url('/') }}#produk">Product</a>
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('education') }}">Edukasi</a>
+                                            <a href="{{ url('education') }}">Education</a>
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/') }}#testimoni">Testimoni</a>
+                                            <a href="{{ url('/') }}#testimoni">Testimonies</a>
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('contact') }}">Kontak</a>
+                                            <a href="{{ url('contact') }}">Contact</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -115,9 +116,9 @@
                         <div class="row align-items-center">
                             <div class="col-lg-3 col-6">
 
-                                <a href="{{ url('/') }}" class="header-logo">
+                                {{-- <a href="{{ url('/') }}" class="header-logo">
                                     <img src="{{ asset('customer/img/logo.png') }}" alt="Header Logo">
-                                </a>
+                                </a> --}}
 
                             </div>
                             <div class="col-lg-6 d-none d-lg-block">
@@ -125,19 +126,19 @@
                                     <nav class="main-nav">
                                         <ul>
                                             <li class="drop-holder">
-                                                <a href="{{ url('/') }}">Beranda</a>
+                                                <a href="{{ url('/') }}">Home</a>
                                             </li>
                                             <li class="drop-holder">
-                                                <a href="{{ url('/') }}#produk">Produk</a>
+                                                <a href="{{ url('/') }}#produk">Product</a>
                                             </li>
                                             <li class="drop-holder">
-                                                <a href="{{ url('education') }}">Edukasi</a>
+                                                <a href="{{ url('education') }}">Education</a>
                                             </li>
                                             <li class="drop-holder">
-                                                <a href="{{ url('/') }}#testimoni">Testimoni</a>
+                                                <a href="{{ url('/') }}#testimoni">Testimonies</a>
                                             </li>
                                             <li class="drop-holder">
-                                                <a href="{{ url('contact') }}">Kontak</a>
+                                                <a href="{{ url('contact') }}">Contact</a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -174,8 +175,8 @@
                             <a href="#" class="button-close"><i class="pe-7s-close"></i></a>
                         </div>
                         <div class="header-contact offcanvas-contact">
-                            <i class="pe-7s-call"></i>
-                            <a href="https://wa.me/+6281246312412">+6281246312412</a>
+                            {{-- <i class="pe-7s-call"></i> --}}
+                            {{-- <a href="https://wa.me/+6281246312412">+6281246312412</a> --}}
                         </div>
                         <div class="offcanvas-user-info">
                             <ul>
@@ -199,19 +200,19 @@
                             <nav class="offcanvas-navigation">
                                 <ul>
                                     <li class="drop-holder">
-                                        <a href="{{ url('/') }}">Beranda</a>
+                                        <a href="{{ url('/') }}">Home</a>
                                     </li>
                                     <li class="drop-holder">
-                                        <a href="{{ url('/') }}#produk">Produk</a>
+                                        <a href="{{ url('/') }}#produk">Product</a>
                                     </li>
                                     <li class="drop-holder">
-                                        <a href="{{ url('education') }}">Edukasi</a>
+                                        <a href="{{ url('education') }}">Education</a>
                                     </li>
                                     <li class="drop-holder">
-                                        <a href="{{ url('/') }}#testimoni">Testimoni</a>
+                                        <a href="{{ url('/') }}#testimoni">Testimonies</a>
                                     </li>
                                     <li class="drop-holder">
-                                        <a href="{{ url('contact') }}">Kontak</a>
+                                        <a href="{{ url('contact') }}">Contact</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -233,23 +234,23 @@
                             <div class="footer-widget-item">
                                 <div class="footer-widget-logo">
                                     <a href="index.html">
-                                        <img src="{{ asset('customer/img/logo.png') }}" height="100px" alt="Logo">
+                                        {{-- <img src="{{ asset('customer/img/logo.png') }}" height="100px" alt="Logo"> --}}
                                     </a>
                                 </div>
                                 <div class="social-link with-border">
                                     <ul>
                                         <li>
-                                            <a href="https://web.facebook.com/profile.php?id=100079025948266" data-tippy="Facebook" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                            {{-- <a href="https://web.facebook.com/profile.php?id=100079025948266" data-tippy="Facebook" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder"> --}}
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.instagram.com/p/CbEtDL2rBC6/?igshid=YmMyMTA2M2Y=" data-tippy="Instagram" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                            {{-- <a href="https://www.instagram.com/p/CbEtDL2rBC6/?igshid=YmMyMTA2M2Y=" data-tippy="Instagram" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder"> --}}
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://wa.me/+6281246312412" data-tippy="Whatsapp" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                            {{-- <a href="https://wa.me/+6281246312412" data-tippy="Whatsapp" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder"> --}}
                                                 <i class="fa fa-phone"></i>
                                             </a>
                                         </li>
@@ -259,12 +260,12 @@
                         </div>
                         <div class="col-lg-6 pt-40">
                             <div class="footer-contact-info">
-                                <h3 class="footer-widget-title">Punya Pertanyaan? Hubungi Kami</h3>
-                                <a href="https://wa.me/+6281246312412">+6281246312412</a>
+                                <h3 class="footer-widget-title">Ethiopia</h3>
+                                <a>+123456789</a>
                                 <div class="address">
                                     <ul>
                                         <li>
-                                            Jalan Tukad Badung Nomor 335 Renon Denpasar
+                                            Addis Ababa
                                         </li>
                                     </ul>
                                 </div>
@@ -278,8 +279,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="copyright">
-                                <span class="copyright-text">© 2022 Carik Bali Agriculture Made with <i class="fa fa-heart text-danger"></i> by
-                            <a href="{{ url('/') }}" rel="noopener" target="_blank">Carik Bali Agriculture</a> </span>
+                                <span class="copyright-text">© 2024 Agri Link
+                            <a href="{{ url('/') }}" rel="noopener" target="_blank"></a> </span>
                             </div>
                         </div>
                     </div>

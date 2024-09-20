@@ -8,19 +8,19 @@
             <div class="row h-100">
                 <div class="col-lg-12">
                     <div class="breadcrumb-item">
-                        <h1 class="breadcrumb-heading">Kontak Kami</h1>
+                        <h1 class="breadcrumb-heading">Contact Us</h1>
                         <ul>
                             <li>
                                 <a href="{{ url('/') }}">Home</a>
                             </li>
-                            <li>Kontak Kami</li>
+                            <li>Contact</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="about-area section-space-top-95">
+    {{-- <div class="about-area section-space-top-95">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -89,6 +89,6 @@
         </div>
     </div>
 
-</main>
+</main> --}}
 <!-- Main Content Area End Here -->
 @endsection

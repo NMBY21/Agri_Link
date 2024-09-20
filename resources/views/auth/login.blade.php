@@ -62,7 +62,7 @@
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Carik Bali Agriculture</title>
+    <title>Agri_Link</title>
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Pronia plant store bootstrap 5 template is an awesome website template for any home plant shop.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,11 +127,11 @@
                                     <h4 class="login-title">Login</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <label>Alamat Email</label>
+                                            <label>Email</label>
                                             <input type="email" name="email" placeholder="Alamat Email" required>
                                         </div>
                                         <div class="col-lg-12">
-                                            <label>Kata Sandi</label>
+                                            <label>password</label>
                                             <input type="password" name="password" placeholder="Kata Sandi" required>
                                         </div>
                                         {{-- <div class="col-md-4 pt-1 mt-md-0">

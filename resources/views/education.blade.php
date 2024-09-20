@@ -8,12 +8,12 @@
             <div class="row h-100">
                 <div class="col-lg-12">
                     <div class="breadcrumb-item">
-                        <h2 class="breadcrumb-heading">Edukasi</h2>
+                        <h2 class="breadcrumb-heading">Education</h2>
                         <ul>
                             <li>
-                                <a href="{{ url('/') }}">Beranda</a>
+                                <a href="{{ url('/') }}">Home</a>
                             </li>
-                            <li>Detail Edukasi</li>
+                            <li>Detail Education</li>
                         </ul>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                                     <li class="author">
                                         <a href="#">By: Admin</a>
                                     </li>
-                                    <li class="date">24 April 2021</li>
+                                    <li class="date">10 September, 2024</li>
                                 </ul>
                             </div>
                             <h2 class="title">Pentingnya Menjaga Kesehatan</h2>
