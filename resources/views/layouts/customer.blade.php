@@ -65,7 +65,7 @@
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="settingButton">
                                                 <li>
-                                                    <a class="dropdown-item" href="{{ url('/customer/profile') }}">Akun Saya</a>
+                                                    <a class="dropdown-item" href="{{ url('/customer/profile') }}">Profile</a>
                                                 </li>
                                                 <li>
                                                     <form method="POST" action="{{ route('logout') }}">
@@ -306,8 +306,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="copyright">
-                                <span class="copyright-text">© 2024 <i class="fa fa-heart text-danger"></i> by
-                            <a href="{{ url('/') }}" rel="noopener" target="_blank">Agriculture</a> </span>
+                                <span class="copyright-text">© 2024
+                            <a href="{{ url('/') }}" rel="noopener" target="_blank">Agriculture Link</a> </span>
                             </div>
                         </div>
                     </div>
