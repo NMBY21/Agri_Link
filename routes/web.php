@@ -59,7 +59,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function() {
     Route::post('/superadmin/delivery/confirm/{id}', [SuperadminTransactionController::class, 'confirmdelivery'])->name('confirm.transaction.delivery.superadmin');
     Route::post('/superadmin/delivery/confirm/cancel/{id}', [SuperadminTransactionController::class, 'canceldelivery'])->name('cancel.transaction.delivery.superadmin');
 
-    Route::get('/superadmin/success', [SuperadminTransactionController::class, 'indexsuccess'])->name('transaction.success.superadmin');
+Route::get('/superadmin/success', [SuperadminTransactionController::class, 'indexsuccess'])->name('transaction.success.superadmin');
     Route::get('/superadmin/failed', [SuperadminTransactionController::class, 'indexfailed'])->name('transaction.failed.superadmin');
 });
 
