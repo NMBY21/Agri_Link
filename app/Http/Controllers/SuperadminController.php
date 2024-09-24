@@ -17,16 +17,16 @@ class SuperadminController extends Controller
     public function index()
     {
         // Get the count of products
-        $productCount = Product::where('status_product', '>', '0')->count(); 
+        $productCount = Product::where('status_product', '>', '0')->count();
 
         // Count other statistics as needed
-        $pendingOrders = Order::where('status_order', '0')->count(); 
-        $completedOrders = Order::where('status_order', '1')->count(); 
-        $canceledOrders = Order::where('status_order', '<', '0')->count(); 
-        $totalRevenue = Order::where('status_order', '2')->sum('total_order'); 
+        $pendingOrders = Order::where('status_order', '0')->count();
+        $completedOrders = Order::where('status_order', '1')->count();
+        $canceledOrders = Order::where('status_order', '<', '0')->count();
+        $totalRevenue = Order::where('status_order', '2')->sum('total_order');
 
         // Pass the data to the view
-        return view('superadmin.dashboard', compact('productCount', 'pendingOrders', 'completedOrders', 'canceledOrders', 'totalRevenue'));
+return view('superadmin.dashboard', compact('productCount', 'pendingOrders', 'completedOrders', 'canceledOrders', 'totalRevenue'));
     }
 
     /**

@@ -61,12 +61,13 @@
                                 <div class="header-right">
                                     <ul>
                                         <li class="dropdown d-none d-lg-block">
-                                            <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-label="setting" aria-expanded="false">
+                                            <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton"
+                                                data-bs-toggle="dropdown" aria-label="setting" aria-expanded="false">
                                                 <i class="pe-7s-users"></i>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="settingButton">
-                                                <li><a class="dropdown-item" href="{{ url('/login') }}">Login</a>
-                                                </li>
+                                                <li><a class="dropdown-item" href="{{ url('/login') }}">Login as Customer</a></li>
+                                                <li><a class="dropdown-item" href="{{ url('superadmin/login') }}">Login as Farmer</a></li>
                                             </ul>
                                         </li>
                                         <li class="mobile-menu_wrap d-block d-lg-none">

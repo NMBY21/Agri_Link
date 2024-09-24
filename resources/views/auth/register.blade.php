@@ -64,7 +64,7 @@
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Carik Bali Agriculture</title>
+    <title>Agriculture</title>
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Pronia plant store bootstrap 5 template is an awesome website template for any home plant shop.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,19 +129,19 @@
                                     <h4 class="login-title">Register</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <label>Nama</label>
+                                            <label>Name</label>
                                             <input type="text" name="name" placeholder="Nama" required>
                                         </div>
                                         <div class="col-lg-12">
-                                            <label>Email Address</label>
+                                            <label>Email</label>
                                             <input type="email" name="email" placeholder="Alamat Email" required>
                                         </div>
                                         <div class="col-lg-12">
-                                            <label>Kanti Sandi</label>
+                                            <label>Password</label>
                                             <input type="password" name="password" placeholder="Kata Sandi" required>
                                         </div>
                                         <div class="col-lg-12">
-                                            <label>Konfirmasi Kanti Sandi</label>
+                                            <label>Confirm Password</label>
                                             <input type="password" name="password_confirmation" placeholder="Konfirmasi Kata Sandi" required>
                                         </div>
                                         <div class="col-lg-12 pt-5">
