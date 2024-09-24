@@ -8,12 +8,12 @@
             <div class="row h-100">
                 <div class="col-lg-12">
                     <div class="breadcrumb-item">
-                        <h2 class="breadcrumb-heading">Akun Saya</h2>
+                        <h2 class="breadcrumb-heading">Profile</h2>
                         <ul>
                             <li>
                                 <a href="{{ url('/customer/dashboard') }}">Home</a>
                             </li>
-                            <li>Akun Saya</li>
+                            <li>Profile</li>
                         </ul>
                     </div>
                 </div>
@@ -38,15 +38,15 @@
                                     @csrf
                                     <div class="myaccount-form-inner">
                                         <div class="single-input single-input-half">
-                                            <label>Nama</label>
+                                            <label>Name</label>
                                             <input type="text" value="{{ $data->name }}" name="name_input" required>
                                         </div>
                                         <div class="single-input single-input-half">
-                                            <label>Alamt Email</label>
+                                            <label>Email</label>
                                             <input type="email" value="{{ $data->email }}" name="email_input" required>
                                         </div>
                                         <div class="single-input">
-                                            <label>No Telepon</label>
+                                            <label>Phone Number</label>
                                             @if ($data->number_phone == null)
                                                 <input type="number" placeholder="No Telepon Anda Kosong" name="phone_input">
                                             @else
@@ -54,7 +54,7 @@
                                             @endif
                                         </div>
                                         <div class="single-input">
-                                            <label>Alamat Rumah</label>
+                                            <label>Address</label>
                                             @if ($data->address_user == null)
                                                 <textarea rows="3" placeholder="Alamat Rumah Anda Kosong" name="address_input"></textarea>
                                             @else
@@ -62,12 +62,12 @@
                                             @endif
                                         </div>
                                         <div class="single-input">
-                                            <label>Password Baru (Biarkan kosong jika tidak ingin merubah)</label>
+                                            <label>Password</label>
                                             <input type="password" name="password_input">
                                         </div>
                                         <div class="single-input">
                                             <button class="btn btn-custom-size lg-size btn-pronia-primary" type="submit">
-                                                <span>SIMPAN</span>
+                                                <span>Submit</span>
                                             </button>
                                         </div>
                                     </div>
