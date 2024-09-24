@@ -98,22 +98,22 @@
                                 <nav class="main-nav">
                                     <ul>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/dashboard') }}">Beranda</a>
+                                            <a href="{{ url('/customer/dashboard') }}">Home</a>
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/dashboard') }}#produk">Produk</a>
+                                            <a href="{{ url('/customer/dashboard') }}#produk">Product</a>
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/education') }}">Edukasi</a>
+                                            <a href="{{ url('/customer/education') }}">Education</a>
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/dashboard') }}#testimoni">Testimoni</a>
+                                            <a href="{{ url('/customer/dashboard') }}#testimoni">Testimonies</a>
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/contact') }}">Kontak</a>
+                                            <a href="{{ url('/customer/contact') }}">Contact</a>
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/history') }}">Pemesanan</a>
+                                            <a href="{{ url('/customer/history') }}">History</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -138,22 +138,22 @@
                                     <nav class="main-nav">
                                         <ul>
                                             <li class="drop-holder">
-                                                <a href="{{ url('/customer/dashboard') }}">Beranda</a>
+                                                <a href="{{ url('/customer/dashboard') }}">Home</a>
                                             </li>
                                             <li class="drop-holder">
-                                                <a href="{{ url('/customer/dashboard') }}#produk">Produk</a>
+                                                <a href="{{ url('/customer/dashboard') }}#produk">Product</a>
                                             </li>
                                             <li class="drop-holder">
-                                                <a href="{{ url('/customer/education') }}">Edukasi</a>
+                                                <a href="{{ url('/customer/education') }}">Education</a>
                                             </li>
                                             <li class="drop-holder">
-                                                <a href="{{ url('/customer/dashboard') }}#testimoni">Testimoni</a>
+                                                <a href="{{ url('/customer/dashboard') }}#testimoni">Testimonies</a>
                                             </li>
                                             <li class="drop-holder">
-                                                <a href="{{ url('/customer/contact') }}">Kontak</a>
+                                                <a href="{{ url('/customer/contact') }}">Contact</a>
                                             </li>
                                             <li class="drop-holder">
-                                                <a href="{{ url('/customer/history') }}">Pemesanan</a>
+                                                <a href="{{ url('/customer/history') }}">History</a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -168,7 +168,7 @@
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="settingButton">
                                                 <li>
-                                                    <a class="dropdown-item" href="{{ url('/customer/profile') }}">Akun Saya</a>
+                                                    <a class="dropdown-item" href="{{ url('/customer/profile') }}">Profile</a>
                                                 </li>
                                                 <li>
                                                     <form method="POST" action="{{ route('logout') }}">
@@ -200,7 +200,7 @@
                         </div>
                         <div class="header-contact offcanvas-contact">
                             <i class="pe-7s-call"></i>
-                            <a href="https://wa.me/+6281246312412">+6281246312412</a>
+                            <a href="https://wa.me/+6281246312412">09123456789</a>
                         </div>
                         <div class="offcanvas-user-info">
                             <ul>
@@ -224,22 +224,22 @@
                             <nav class="offcanvas-navigation">
                                 <ul>
                                     <li class="drop-holder">
-                                        <a href="{{ url('/') }}">Beranda</a>
+                                        <a href="{{ url('/') }}">Home</a>
                                     </li>
                                     <li class="drop-holder">
-                                        <a href="{{ url('/') }}#produk">Produk</a>
+                                        <a href="{{ url('/') }}#produk">Product</a>
                                     </li>
                                     <li class="drop-holder">
-                                        <a href="{{ url('education') }}">Edukasi</a>
+                                        <a href="{{ url('education') }}">Education</a>
                                     </li>
                                     <li class="drop-holder">
-                                        <a href="{{ url('/') }}#testimoni">Testimoni</a>
+                                        <a href="{{ url('/') }}#testimoni">Testimonies</a>
                                     </li>
                                     <li class="drop-holder">
-                                        <a href="{{ url('contact') }}">Kontak</a>
+                                        <a href="{{ url('contact') }}">Contact</a>
                                     </li>
                                     <li class="drop-holder">
-                                        <a href="{{ url('/customer/history') }}">Pemesanan</a>
+                                        <a href="{{ url('/customer/history') }}">History</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -267,17 +267,17 @@
                                 <div class="social-link with-border">
                                     <ul>
                                         <li>
-                                            <a href="https://web.facebook.com/profile.php?id=100079025948266" data-tippy="Facebook" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                            <a href="" data-tippy="Facebook" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.instagram.com/p/CbEtDL2rBC6/?igshid=YmMyMTA2M2Y=" data-tippy="Instagram" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                            <a href="" data-tippy="Instagram" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://wa.me/+6281246312412" data-tippy="Whatsapp" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                            <a href="" data-tippy="Whatsapp" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
                                                 <i class="fa fa-phone"></i>
                                             </a>
                                         </li>
@@ -287,12 +287,12 @@
                         </div>
                         <div class="col-lg-6 pt-40">
                             <div class="footer-contact-info">
-                                <h3 class="footer-widget-title">Punya Pertanyaan? Hubungi Kami</h3>
-                                <a href="https://wa.me/+6281246312412">+6281246312412</a>
+                                <h3 class="footer-widget-title"></h3>
+                                <a href="">091234567</a>
                                 <div class="address">
                                     <ul>
                                         <li>
-                                            Jalan Tukad Badung Nomor 335 Renon Denpasar
+
                                         </li>
                                     </ul>
                                 </div>
@@ -306,8 +306,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="copyright">
-                                <span class="copyright-text">© 2022 Carik Bali Agriculture Made with <i class="fa fa-heart text-danger"></i> by
-                            <a href="{{ url('/') }}" rel="noopener" target="_blank">Carik Bali Agriculture</a> </span>
+                                <span class="copyright-text">© 2024 <i class="fa fa-heart text-danger"></i> by
+                            <a href="{{ url('/') }}" rel="noopener" target="_blank">Agriculture</a> </span>
                             </div>
                         </div>
                     </div>

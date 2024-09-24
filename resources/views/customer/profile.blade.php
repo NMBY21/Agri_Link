@@ -26,7 +26,7 @@
                 <div class="col-lg-3">
                     <ul class="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="account-details-tab" data-bs-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="false">Detail Akun</a>
+                            <a class="nav-link active" id="account-details-tab" data-bs-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="false"></a>
                         </li>
                     </ul>
                 </div>
