@@ -11,7 +11,7 @@
                         <h2 class="breadcrumb-heading">{{ $data->name_product }}</h2>
                         <ul>
                             <li>
-                                <a href="{{ url('/customer/dashboard') }}">Beranda</a>
+                                <a href="{{ url('/customer/dashboard') }}">Home</a>
                             </li>
                             <li>{{ $data->name_product }}</li>
                         </ul>
@@ -41,7 +41,7 @@
                                 <div class="swiper-wrapper">
                                     @foreach ($dataimage as $item)
                                     <a href="#" class="swiper-slide">
-                                        <img class="img-full" src="{{ asset('img_uploads/gallery/'.$item->name_img_produk) }}" alt="Product Thumnail">
+                                        <img class="img-full" src="{{ asset('img_uploads/gallery/'.$item->name_img_produk) }}" alt="Product Thumbnail">
                                     </a>
                                     @endforeach
                                 </div>
@@ -127,7 +127,7 @@
                     <div class="tab-content product-tab-content">
                         <div class="tab-pane fade" id="information" role="tabpanel" aria-labelledby="information-tab">
                             <div class="product-information-body">
-                                <h4 class="title">Informasi tentang {{ $data->name_product }}</h4>
+                                <h4 class="title">Information about {{ $data->name_product }}</h4>
                                 <p class="short-desc mb-4">{{ $data->information_product }}</p>
                             </div>
                         </div>

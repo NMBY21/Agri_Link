@@ -46,11 +46,7 @@
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
                             <td>
-                                @if ($item->number_phone == null)
-                                    Empty
-                                @else
-                                    {{ $item->number_phone }}
-                                @endif
+                                {{ $item->number_phone ?? 'Empty' }}
                             </td>
                             <td>
                                 @if ($item->status_user == '1')
@@ -96,7 +92,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label for="exampleFormControlTextarea1" class="form-label">Address Customer</label>
-                                                        <textarea class="form-control" rows="3" disabled>{{ $item->address_user }}</textarea>
+                                                        <textarea class="form-control" rows="3" disabled>{{ $item->address_user ?? 'N/A' }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -105,18 +101,16 @@
                                                     <div class="mb-3">
                                                         <label for="exampleFormControlInput1" class="form-label">Status Product</label>
                                                         <select class="form-select" aria-label="Default select example" name="status_input" disabled>
-                                                            @if ($item->status_user == '1')
-                                                            <option selected='selected'>Active</option>
-                                                            @else
-                                                            <option selected='selected'>Non-Active</option>
-                                                            @endif
+                                                            <option value="{{ $item->status_user }}" selected>
+                                                                {{ $item->status_user == '1' ? 'Active' : 'Non-Active' }}
+                                                            </option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         </div>
                                       </div>
                                     </div>
@@ -167,46 +161,30 @@
                                                     <div class="col-lg-12">
                                                         <div class="mb-3">
                                                             <label for="exampleFormControlTextarea1" class="form-label">Address Customer</label>
-                                                            <textarea class="form-control" name="address_input" rows="3" placeholder="Address Customer ...">{{ $item->address_user }}</textarea>
+                                                            <textarea class="form-control" name="address_input" rows="3" placeholder="Address Customer ...">{{ $item->address_user ?? 'N/A' }}</textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="mb-3">
-                                                            <label for="exampleFormControlInput1" class="form-label">Status Product</label>
-                                                            <select class="form-select" aria-label="Default select example" name="status_input">
-                                                                <option value="{{ $item->status_user }}" {{ $item->status_user ? 'selected' : ''}} >
-                                                                    @if ($item->status_user == '1')
-                                                                    Active
-                                                                    @else
-                                                                    Non-Active
-                                                                    @endif
-                                                                </option>
-                                                                @if ($item->status_user == '1')
-                                                                    <option value="0">Non-Active</option>
-                                                                @else
-                                                                    <option value="1">Active</option>
-                                                                @endif
+                                                            <label for="exampleFormControlInput1" class="form-label">Status User</label>
+                                                            <select class="form-select" aria-label="Default select example" name="status_input" required>
+                                                                <option value="1" {{ $item->status_user == '1' ? 'selected' : '' }}>Active</option>
+                                                                <option value="0" {{ $item->status_user == '0' ? 'selected' : '' }}>Non-Active</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="reset" class="btn btn-danger">Reset</button>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Update</button>
                                             </div>
                                         </form>
                                       </div>
                                     </div>
                                 </div>
-                                <form action="{{ url('superadmin/customer/delete') }}/{{ $item->id }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
                             </td>
                         </tr>
                         @endforeach
@@ -214,76 +192,6 @@
                 </table>
             </div>
         </div>
-    </div>
-
-</div>
-
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Input Data Customer</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form method="POST" action="{{ url('superadmin/customer') }}" enctype="multipart/form-data">
-            @csrf
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Name Customer</label>
-                            <input type="text" class="form-control" name="name_input" placeholder="Name Customer ..." required>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Email Customer</label>
-                            <input type="text" class="form-control" name="email_input" placeholder="Email Customer ..." required>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Number Phone Customer</label>
-                            <input class="form-control" name="number_input" type="number" placeholder="Number Phone Customer ...">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Password Customer</label>
-                            <input class="form-control" type="password" name="password_input" placeholder="Password Customer ..." required>
-                            <div id="emailHelp" class="form-text">Password minimum 8 characters</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Address Customer</label>
-                            <textarea class="form-control" name="address_input" rows="3" placeholder="Address Customer ..." required></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Status Product</label>
-                            <select class="form-select" aria-label="Default select example" name="status_input">
-                                <option value="1">Active</option>
-                                <option value="0">Non-Active</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="reset" class="btn btn-danger">Reset</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
-      </div>
     </div>
 </div>
 @endsection

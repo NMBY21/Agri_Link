@@ -3,90 +3,42 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Customer;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
 class SuperadminController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the dashboard with necessary data.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $data = Product::where('status_product', '>', '0')->get()->count();
-        $data2 = Order::where('status_order', '0')->get()->count();
-        $data3 = Order::where('status_order', '1')->get()->count();
-        $data4 = Order::where('status_order', '<', '0')->get()->count();
-        $data5 = Order::where('status_order', '2')->get();
-        $omset = $data5->sum('total_order');
-        return view('superadmin.dashboard', compact('data', 'data2', 'data3', 'data4', 'omset'));
+        // Get the count of products
+        $productCount = Product::where('status_product', '>', '0')->count(); 
+
+        // Count other statistics as needed
+        $pendingOrders = Order::where('status_order', '0')->count(); 
+        $completedOrders = Order::where('status_order', '1')->count(); 
+        $canceledOrders = Order::where('status_order', '<', '0')->count(); 
+        $totalRevenue = Order::where('status_order', '2')->sum('total_order'); 
+
+        // Pass the data to the view
+        return view('superadmin.dashboard', compact('productCount', 'pendingOrders', 'completedOrders', 'canceledOrders', 'totalRevenue'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function customerData()
     {
-        //
+        $data = Customer::all(); // Fetch all customer records
+        return view('superadmin.customers', compact('data')); // Pass data to the customers view
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    // Other methods (create, store, show, edit, update, destroy) can be implemented here as needed
 }
