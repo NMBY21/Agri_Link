@@ -6,14 +6,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.4",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "midtrans/midtrans-php": "^2.5",
         "realrashid/sweet-alert": "^5.0",
-        "santigarcor/laratrust": "^7.1",
+        "santigarcor/laratrust": "^7.2",
+        "spatie/laravel-permission": "^6.9",
+        "symfony/mailer": "^6.1",
         "twilio/sdk": "^6.37"
     },
     "require-dev": {

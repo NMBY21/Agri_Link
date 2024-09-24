@@ -31,21 +31,21 @@ use App\Http\Controllers\SuperadminTransactionController;
 |
 */
 
-//Guest
+// Guest
 Route::get('/', [HomeController::class, 'index'])->name('dashboard.guest');
 Route::get('/product/{id}', [HomeController::class, 'product'])->name('product.guest');
 Route::get('/education', [HomeController::class, 'education'])->name('education.guest');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact.guest');
 
-//Login Filter Session
+// Login Filter Session
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', [AuthController::class, 'index'])->name('dashboard');
 });
 
-//Superadmin
-Route::get('/superadmin/login/', [AuthController::class, 'superadminlogin'])->name('login.superadmin');
+// Superadmin
+Route::get('/superadmin/login', [AuthController::class, 'superadminlogin'])->name('login.superadmin');
 Route::group(['middleware' => ['auth', 'role:superadmin']], function() {
-    Route::get('/superadmin/dashboard', [SuperadminController::class, 'index'])->name('dashboard.superadmin');
+    Route::get('/superadmin/dashboard', [AuthController::class, 'index'])->name('dashboard.superadmin');
     Route::get('/superadmin/product', [SuperadminProductController::class, 'index'])->name('product.superadmin');
     Route::post('/superadmin/product', [SuperadminProductController::class, 'store'])->name('post.product.superadmin');
     Route::post('/superadmin/product/edit/{id}', [SuperadminProductController::class, 'update'])->name('update.product.superadmin');
@@ -68,9 +68,9 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function() {
     Route::get('/superadmin/failed', [SuperadminTransactionController::class, 'indexfailed'])->name('transaction.failed.superadmin');
 });
 
-//Customer
+// Customer
 Route::group(['middleware' => ['auth', 'role:customer']], function() {
-    Route::get('/customer/dashboard', [CustomerController::class, 'index'])->name('dashboard.customer');
+    Route::get('/customer/dashboard', [AuthController::class, 'index'])->name('dashboard.customer');
     Route::get('/customer/product/{id}', [CustomerProductController::class, 'show'])->name('product.customer');
     Route::post('/customer/order', [CustomerProductController::class, 'store'])->name('order.product.customer');
     Route::get('/customer/education', [CustomerController::class, 'education'])->name('education.customer');
@@ -82,6 +82,5 @@ Route::group(['middleware' => ['auth', 'role:customer']], function() {
     Route::post('/customer/payment/cod', [CustomerProductController::class, 'cod'])->name('cod.product.customer');
 });
 
-
-
+// Include additional authentication routes
 require __DIR__.'/auth.php';

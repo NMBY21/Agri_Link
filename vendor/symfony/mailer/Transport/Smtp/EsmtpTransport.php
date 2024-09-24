@@ -15,7 +15,6 @@ use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Mailer\Exception\TransportException;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-use Symfony\Component\Mailer\Exception\UnexpectedResponseException;
 use Symfony\Component\Mailer\Transport\Smtp\Auth\AuthenticatorInterface;
 use Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream;
 use Symfony\Component\Mailer\Transport\Smtp\Stream\SocketStream;
@@ -32,23 +31,18 @@ class EsmtpTransport extends SmtpTransport
     private string $username = '';
     private string $password = '';
     private array $capabilities;
-    private bool $autoTls = true;
 
-    public function __construct(string $host = 'localhost', int $port = 0, ?bool $tls = null, ?EventDispatcherInterface $dispatcher = null, ?LoggerInterface $logger = null, ?AbstractStream $stream = null, ?array $authenticators = null)
+    public function __construct(string $host = 'localhost', int $port = 0, bool $tls = null, EventDispatcherInterface $dispatcher = null, LoggerInterface $logger = null, AbstractStream $stream = null)
     {
         parent::__construct($stream, $dispatcher, $logger);
 
-        if (null === $authenticators) {
-            // fallback to default authenticators
-            // order is important here (roughly most secure and popular first)
-            $authenticators = [
-                new Auth\CramMd5Authenticator(),
-                new Auth\LoginAuthenticator(),
-                new Auth\PlainAuthenticator(),
-                new Auth\XOAuth2Authenticator(),
-            ];
-        }
-        $this->setAuthenticators($authenticators);
+        // order is important here (roughly most secure and popular first)
+        $this->authenticators = [
+            new Auth\CramMd5Authenticator(),
+            new Auth\LoginAuthenticator(),
+            new Auth\PlainAuthenticator(),
+            new Auth\XOAuth2Authenticator(),
+        ];
 
         /** @var SocketStream $stream */
         $stream = $this->getStream();
@@ -89,7 +83,7 @@ class EsmtpTransport extends SmtpTransport
     /**
      * @return $this
      */
-    public function setPassword(#[\SensitiveParameter] string $password): static
+    public function setPassword(string $password): static
     {
         $this->password = $password;
 
@@ -99,29 +93,6 @@ class EsmtpTransport extends SmtpTransport
     public function getPassword(): string
     {
         return $this->password;
-    }
-
-    /**
-     * @return $this
-     */
-    public function setAutoTls(bool $autoTls): static
-    {
-        $this->autoTls = $autoTls;
-
-        return $this;
-    }
-
-    public function isAutoTls(): bool
-    {
-        return $this->autoTls;
-    }
-
-    public function setAuthenticators(array $authenticators): void
-    {
-        $this->authenticators = [];
-        foreach ($authenticators as $authenticator) {
-            $this->addAuthenticator($authenticator);
-        }
     }
 
     public function addAuthenticator(AuthenticatorInterface $authenticator): void
@@ -162,7 +133,7 @@ class EsmtpTransport extends SmtpTransport
         // WARNING: !$stream->isTLS() is right, 100% sure :)
         // if you think that the ! should be removed, read the code again
         // if doing so "fixes" your issue then it probably means your SMTP server behaves incorrectly or is wrongly configured
-        if ($this->autoTls && !$stream->isTLS() && \defined('OPENSSL_VERSION_NUMBER') && \array_key_exists('STARTTLS', $this->capabilities)) {
+        if (!$stream->isTLS() && \defined('OPENSSL_VERSION_NUMBER') && \array_key_exists('STARTTLS', $this->capabilities)) {
             $this->executeCommand("STARTTLS\r\n", [220]);
 
             if (!$stream->startTLS()) {
@@ -201,7 +172,6 @@ class EsmtpTransport extends SmtpTransport
             return;
         }
 
-        $code = null;
         $authNames = [];
         $errors = [];
         $modes = array_map('strtolower', $modes);
@@ -210,15 +180,12 @@ class EsmtpTransport extends SmtpTransport
                 continue;
             }
 
-            $code = null;
             $authNames[] = $authenticator->getAuthKeyword();
             try {
                 $authenticator->authenticate($this);
 
                 return;
-            } catch (UnexpectedResponseException $e) {
-                $code = $e->getCode();
-
+            } catch (TransportExceptionInterface $e) {
                 try {
                     $this->executeCommand("RSET\r\n", [250]);
                 } catch (TransportExceptionInterface) {
@@ -231,7 +198,7 @@ class EsmtpTransport extends SmtpTransport
         }
 
         if (!$authNames) {
-            throw new TransportException(sprintf('Failed to find an authenticator supported by the SMTP server, which currently supports: "%s".', implode('", "', $modes)), $code ?: 504);
+            throw new TransportException(sprintf('Failed to find an authenticator supported by the SMTP server, which currently supports: "%s".', implode('", "', $modes)));
         }
 
         $message = sprintf('Failed to authenticate on SMTP server with username "%s" using the following authenticators: "%s".', $this->username, implode('", "', $authNames));
@@ -239,6 +206,6 @@ class EsmtpTransport extends SmtpTransport
             $message .= sprintf(' Authenticator "%s" returned "%s".', $name, $error);
         }
 
-        throw new TransportException($message, $code ?: 535);
+        throw new TransportException($message);
     }
 }
