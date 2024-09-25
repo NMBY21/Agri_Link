@@ -88,6 +88,7 @@ Route::group(['middleware' => ['auth', 'role:customer']], function() {
     Route::post('/customer/payment/transfer', [CustomerProductController::class, 'transfer'])->name('transfer.product.customer');
     Route::post('/customer/payment/cod', [CustomerProductController::class, 'cod'])->name('cod.product.customer');
 });
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 // Include additional authentication routes
 require __DIR__.'/auth.php';
