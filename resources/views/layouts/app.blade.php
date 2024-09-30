@@ -58,6 +58,11 @@
                                     {{-- <img src="{{ asset('customer/img/logo.png') }}" height="100px" alt="Header Logo"> --}}
                                 </a>
 
+                                <div class="language-switcher">
+                                    <a href="{{ route('set-language', 'en') }}">English</a>
+                                    <a href="{{ route('set-language', 'am') }}">አማርኛ</a>
+                                </div>
+
                                 <div class="header-right">
                                     <ul>
                                         <li class="dropdown d-none d-lg-block">
@@ -104,6 +109,8 @@
                                         <li class="drop-holder">
                                             <a href="{{ url('contact') }}">Contact</a>
                                         </li>
+                                        
+
                                     </ul>
                                 </nav>
                             </div>

@@ -53,13 +53,12 @@
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+</x-guest-layout> --}}
 
-<!DOCTYPE html> --}}
-<html lang="zxx">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Agri_Link</title>
@@ -71,7 +70,6 @@
 
     <!-- CSS
     ============================================ -->
-
     <link rel="stylesheet" href="{{ asset('customer/assets/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('customer/assets/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('customer/assets/css/Pe-icon-7-stroke.css') }}" />
@@ -83,7 +81,6 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('customer/assets/css/style.css') }}">
-
 </head>
 
 <body>
@@ -105,7 +102,7 @@
                     <div class="row h-100">
                         <div class="col-lg-12">
                             <div class="breadcrumb-item">
-                                <h2 class="breadcrumb-heading">Login Customer</h2>
+                                <h2 class="breadcrumb-heading">Customer Login</h2>
                                 <ul>
                                     <li>
                                         <a href="{{ url('/') }}">Home</a>
@@ -128,15 +125,15 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <label>Email</label>
-                                            <input type="email" name="email" placeholder="Alamat Email" required>
+                                            <input type="email" name="email" placeholder="Email Address" required>
                                         </div>
                                         <div class="col-lg-12">
-                                            <label>password</label>
-                                            <input type="password" name="password" placeholder="Kata Sandi" required>
+                                            <label>Password</label>
+                                            <input type="password" name="password" placeholder="Password" required>
                                         </div>
                                         {{-- <div class="col-md-4 pt-1 mt-md-0">
                                             <div class="forgotton-password_info">
-                                                <a href="#"> Lupa Password ?</a>
+                                                <a href="#"> Forgot Password?</a>
                                             </div>
                                         </div> --}}
                                         <div class="col-lg-12 pt-5">
@@ -159,7 +156,6 @@
 
     <!-- JS Files
     ============================================ -->
-
     <script src="{{ asset('customer/assets/js/vendor/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('customer/assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('customer/assets/js/vendor/jquery-migrate-3.3.2.min.js') }}"></script>
@@ -177,7 +173,6 @@
 
     <!--Main JS (Common Activation Codes)-->
     <script src="{{ asset('customer/assets/js/main.js') }}"></script>
-
 </body>
 
 </html>

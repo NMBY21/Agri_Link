@@ -13,11 +13,11 @@
                             <div class="row">
                                 <div class="col-lg-6 order-2 order-lg-1 align-self-center">
                                     <div class="slide-content text-black">
-                                        <span class="offer">Diskon 30%</span>
-                                        <h2 class="title">Produk Baru</h2>
-                                        <p class="short-desc">Pisang Cavendish Organik</p>
+                                        <span class="offer">30% Discount</span>
+                                        <h2 class="title">New Products</h2>
+                                        <p class="short-desc">Organic Cavendish Bananas</p>
                                         <div class="btn-wrap">
-                                            <a class="btn btn-custom-size xl-size btn-pronia-primary" href="#produk">Pesan Sekarang</a>
+                                            <a class="btn btn-custom-size xl-size btn-pronia-primary" href="#produk">Order Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -40,11 +40,11 @@
                             <div class="row">
                                 <div class="col-lg-6 order-2 order-lg-1 align-self-center">
                                     <div class="slide-content text-black">
-                                        <span class="offer">Diskon 30%</span>
-                                        <h2 class="title">Produk Baru</h2>
-                                        <p class="short-desc">Buah Pepaya Organik</p>
+                                        <span class="offer">30% Discount</span>
+                                        <h2 class="title">New Products</h2>
+                                        <p class="short-desc">Organic Papayas</p>
                                         <div class="btn-wrap">
-                                            <a class="btn btn-custom-size xl-size btn-pronia-primary" href="#produk">Pesan Sekarang</a>
+                                            <a class="btn btn-custom-size xl-size btn-pronia-primary" href="#produk">Order Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -84,8 +84,8 @@
                                 <img src="{{ asset('customer/assets/images/shipping/icon/car.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Bebas biaya kirim</h2>
-                                <p class="short-desc mb-0">Dibatasi pada Rp. 100.000 per pesanan</p>
+                                <h2 class="title">Free Shipping</h2>
+                                <p class="short-desc mb-0">Limited to Rp. 100,000 per order</p>
                             </div>
                         </div>
                     </div>
@@ -95,8 +95,8 @@
                                 <img src="{{ asset('customer/assets/images/shipping/icon/card.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Pembayaran Aman</h2>
-                                <p class="short-desc mb-0">Dengan gateway pembayaran kami</p>
+                                <h2 class="title">Secure Payment</h2>
+                                <p class="short-desc mb-0">With our payment gateway</p>
                             </div>
                         </div>
                     </div>
@@ -106,8 +106,8 @@
                                 <img src="{{ asset('customer/assets/images/shipping/icon/service.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Layanan Terbaik</h2>
-                                <p class="short-desc mb-0">Layanan Ramah & Dukungan dari kami</p>
+                                <h2 class="title">Best Service</h2>
+                                <p class="short-desc mb-0">Friendly service & support from us</p>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
     <div class="product-area section-space-top-100" id="produk">
         <div class="container">
             <div class="section-title-wrap">
-                <h2 class="section-title mb-0">Produk</h2>
+                <h2 class="section-title mb-0">Products</h2>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -160,9 +160,8 @@
         <div class="container-fluid">
             <div class="testimonial-bg" data-bg-image="{{ asset('customer/assets/images/testimonial/bg/1-1-1820x443.jpg') }}">
                 <div class="section-title-wrap">
-                    <h2 class="section-title">Apa kata customer</h2>
-                    <p class="section-desc mb-0">Pelanggan Kami Menyukai Apa yang Kami Lakukan
-                    </p>
+                    <h2 class="section-title">What Customers Say</h2>
+                    <p class="section-desc mb-0">Our Customers Love What We Do</p>
                 </div>
             </div>
             <div class="container custom-space">
@@ -176,12 +175,11 @@
                                     </div>
                                 </div>
                                 <div class="user-content text-charcoal">
-                                    <h4 class="user-name mb-1">Ibu Kadek Dobleh</h4>
-                                    <span class="user-occupation">Ibu Rumah Tangga</span>
+                                    <h4 class="user-name mb-1">Mrs. Kadek Dobleh</h4>
+                                    <span class="user-occupation">Housewife</span>
                                 </div>
                             </div>
-                            <p class="user-comment mb-6">Sayurnya bagus dan seger banget
-                            </p>
+                            <p class="user-comment mb-6">The vegetables are great and very fresh</p>
                         </div>
                         <div class="swiper-slide testimonial-item">
                             <div class="user-info mb-3">
@@ -191,12 +189,11 @@
                                     </div>
                                 </div>
                                 <div class="user-content text-charcoal">
-                                    <h4 class="user-name mb-1">Ibu Made Rareh</h4>
-                                    <span class="user-occupation">Ibu Rumah Tangga</span>
+                                    <h4 class="user-name mb-1">Mrs. Made Rareh</h4>
+                                    <span class="user-occupation">Housewife</span>
                                 </div>
                             </div>
-                            <p class="user-comment mb-6">Pelayanannya ramah sekali :)
-                            </p>
+                            <p class="user-comment mb-6">The service is very friendly :)</p>
                         </div>
                         <div class="swiper-slide testimonial-item">
                             <div class="user-info mb-3">
@@ -207,11 +204,10 @@
                                 </div>
                                 <div class="user-content text-charcoal">
                                     <h4 class="user-name mb-1">Sumiyato</h4>
-                                    <span class="user-occupation">Koki</span>
+                                    <span class="user-occupation">Chef</span>
                                 </div>
                             </div>
-                            <p class="user-comment mb-6">Produknya rekomended banget
-                            </p>
+                            <p class="user-comment mb-6">The products are highly recommended</p>
                         </div>
                     </div>
                     <!-- Add Pagination -->

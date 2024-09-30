@@ -25,9 +25,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="about-content">
-                        <h2 class="about-title">Cerita <span>Kami</span></h2>
-                        <p class="about-desc">Carik Bali merupakan usaha lokal Bali yang menjual berbagai hasil panen pertanian dan perkebunan daerah Bali. Carik Bali terinspirasi dari banyaknya lahan pertanian dan perkebunan di Bali. Banyak petani kesulitan menjual atau menyalurkan hasil panennya ke konsumen langsung, sehingga menjual sekedar dengan harga yang murah, dan cenderung merugikan petani, yang penting laku. Carik Bali mempunyai tujuan untuk mendukung pemasaran hasil panen petani Bali. Hasil pertanian dan perkebunan daerah Bali sangat beragam. Hal ini adalah potensi besar yang perlu dikelola dengan baik, untuk mewujudkan masyarakat yang mempunyai pangan kualitas baik.
-                            Mari bersama dukung petani lokal kita dengan pertanian dan perkebunannya, sehingga tercermin kebahagiaan para petani kita dan terus bersemangat berkarya untuk daerah.
+                        <h2 class="about-title">Our <span>Story</span></h2>
+                        <p class="about-desc">Carik Bali is a local business in Bali that sells various agricultural and plantation products from the Bali region. Carik Bali is inspired by the abundance of agricultural and plantation land in Bali. Many farmers struggle to sell or distribute their harvests directly to consumers, often selling them at low prices that tend to disadvantage them. Carik Bali aims to support the marketing of Bali farmers' harvests. The agricultural and plantation products from Bali are very diverse. This is a great potential that needs to be managed well to create a society with high-quality food.
+                            Let's support our local farmers with their agriculture and plantations, reflecting the happiness of our farmers and encouraging them to keep working for the region.
                             </p>
                         <div class="about-signature">
                             <img src="{{ asset('customer/assets/images/about/icon/2.png') }}" alt="Signature">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Begin Shipping Area -->
     <div class="shipping-area section-space-y-axis-100">
@@ -49,8 +49,8 @@
                                 <img src="{{ asset('customer/assets/images/shipping/icon/car.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Bebas biaya kirim</h2>
-                                <p class="short-desc mb-0">Dibatasi pada Rp. 100.000 per pesanan</p>
+                                <h2 class="title">Free Shipping</h2>
+                                <p class="short-desc mb-0">Limited to $ 100,000 per order</p>
                             </div>
                         </div>
                     </div>
@@ -60,8 +60,8 @@
                                 <img src="{{ asset('customer/assets/images/shipping/icon/card.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Pembayaran Aman</h2>
-                                <p class="short-desc mb-0">Dengan gateway pembayaran kami</p>
+                                <h2 class="title">Secure Payment</h2>
+                                <p class="short-desc mb-0">With our payment gateway</p>
                             </div>
                         </div>
                     </div>
@@ -71,8 +71,8 @@
                                 <img src="{{ asset('customer/assets/images/shipping/icon/service.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Layanan Terbaik</h2>
-                                <p class="short-desc mb-0">Layanan Ramah & Dukungan dari kami</p>
+                                <h2 class="title">Best Service</h2>
+                                <p class="short-desc mb-0">Friendly service & support from us</p>
                             </div>
                         </div>
                     </div>
@@ -84,11 +84,11 @@
 
     <div class="contact-with-map pb-5">
         <div class="contact-map">
-            <iframe class="contact-map-size" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15776.040742790306!2d115.2291486697754!3d-8.690580199999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd241aaecc07c35%3A0xc2527e4285658ba2!2sJl.%20Tukad%20Badung%20No.335%2C%20Renon%2C%20Denpasar%20Selatan%2C%20Kota%20Denpasar%2C%20Bali%2080226!5e0!3m2!1sid!2sid!4v1648406960600!5m2!1sid!2sid" allowfullscreen="" loading="lazy">
+            <iframe class="contact-map-size" src="https://www.google.com/maps/place/Ethio+Innovation+Software+Development/@9.0188336,38.8004416,17z/data=!4m8!3m7!1s0x164b85acb94c361d:0x88d8203742a69cb9!8m2!3d9.0188336!4d38.8004416!9m1!1b1!16s%2Fg%2F11vx25sn1j?entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D" allowfullscreen="" loading="lazy">
             </iframe>
         </div>
     </div>
 
-</main> --}}
+</main> 
 <!-- Main Content Area End Here -->
 @endsection

@@ -8,10 +8,10 @@
             <div class="row h-100">
                 <div class="col-lg-12">
                     <div class="breadcrumb-item">
-                        <h2 class="breadcrumb-heading">Checkout Pesanan</h2>
+                        <h2 class="breadcrumb-heading">Order Checkout</h2>
                         <ul>
                             <li>
-                                <a href="{{ url('/customer/dashboard') }}">Beranda</a>
+                                <a href="{{ url('/customer/dashboard') }}">Home</a>
                             </li>
                             <li>Checkout</li>
                         </ul>
@@ -25,12 +25,12 @@
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="your-order">
-                        <h3>Pesanan kamu</h3>
+                        <h3>Your Order</h3>
                         <div class="your-order-table table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th class="cart-product-name">Barang</th>
+                                        <th class="cart-product-name">Item</th>
                                         <th class="cart-product-total">Total</th>
                                     </tr>
                                 </thead>
@@ -44,7 +44,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr class="order-total">
-                                        <th>Total Pesanan</th>
+                                        <th>Order Total</th>
                                         <td><strong><span class="amount">Rp {{ number_format($orderdetail["total"]) }}</span></strong></td>
                                     </tr>
                                 </tfoot>
@@ -57,7 +57,7 @@
                                         <div class="card-header" id="#payment-2">
                                             <h5 class="panel-title">
                                                 <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false">
-                                                    Metode Pembayaran COD
+                                                    Cash on Delivery (COD)
                                                 </a>
                                             </h5>
                                         </div>
@@ -69,7 +69,7 @@
                                                         <input type="hidden" name="id_product" value="{{ $data->id }}">
                                                         <input type="hidden" name="quantity" value="{{ $orderdetail["quantity"] }}">
                                                         <input type="hidden" name="total" value="{{ $orderdetail["total"] }}">
-                                                        <input value="Buat Pesanan" type="submit">
+                                                        <input value="Place Order" type="submit">
                                                     </form>
                                                 </div>
                                             </div>
@@ -79,14 +79,14 @@
                                         <div class="card-header" id="#payment-3">
                                             <h5 class="panel-title">
                                                 <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false">
-                                                    Metode Pembayaran Bank Transfer
+                                                    Bank Transfer Payment Method
                                                 </a>
                                             </h5>
                                         </div>
                                         <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
                                             <div class="card-body">
                                                 <div class="order-button-payment mb-3">
-                                                    <input id="pay-button" value="Buat Pesanan" type="submit">
+                                                    <input id="pay-button" value="Place Order" type="submit">
                                                 </div>
                                             </div>
                                         </div>

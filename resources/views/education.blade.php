@@ -31,22 +31,22 @@
                                     <li class="author">
                                         <a href="#">By: Admin</a>
                                     </li>
-                                    <li class="date">10 September, 2024</li>
+                                    <li class="date">September 10, 2024</li>
                                 </ul>
                             </div>
-                            <h2 class="title">Pentingnya Menjaga Kesehatan</h2>
-                            <p class="short-desc">Kesehatan adalah hal penting dalam hidup. Kesehatan perlu dijaga supaya tubuh tetap bugar dan bisa melakukan aktivitas dengan lancar. Menjaga kesehatan dapat dilakukan dengan beragam cara, seperti menerapkan gaya hidup sehat, yakni mengonsumsi makanan bernutrisi, minum air putih yang cukup, menjaga pola makan, dan juga rutin berolahraga. Jadi, sahabat carik ayo jagalah kesehatan, karena kesehatan adalah investasi kedepannya.
+                            <h2 class="title">The Importance of Maintaining Health</h2>
+                            <p class="short-desc">Health is an essential aspect of life. It needs to be maintained to keep the body fit and able to carry out activities smoothly. Maintaining health can be done in various ways, such as adopting a healthy lifestyle, which includes consuming nutritious food, drinking enough water, maintaining a balanced diet, and also exercising regularly. So, friends, let’s take care of our health because it is an investment for the future.
                             </p>
                         </div>
                         <div class="blog-img img-hover-effect">
                             <img class="img-full" src="{{ asset('customer/assets/images/blog/large-size/1-1-768x546.jpg') }}" alt="Blog Image">
                         </div>
-                        <p class="short-desc">Makanan bernutrisi adalah nutrisi penting dalam tubuh kita. Keseimbangan kandungan penting dari makanan, seperti karbohidrat, protein, lemak, dan lainnya mempengaruhi kesehatan tubuh kita. Air putih juga penting sekali untuk tubuh kita, yang mana tubuh kita terdiri dari air dengan komposisi lebih dari 50 persen. Jika kita kekurangan air, maka kita bisa lemas ataupun dehidrasi. Pola makan kita wajib diatur juga untuk menghindari penyakit, seperti obesitas. Nah, olahraga juga penting dalam menjaga kebugaran tubuh kita. Olahraga dapat dilakukan secara ringan, tetapi rutin. Dengan itu, kita akan merasa lebih segar dan bersemangat dalam beraktivitas.</p>
+                        <p class="short-desc">Nutritious food is essential for our bodies. The balance of important nutrients in food, such as carbohydrates, proteins, fats, and others, affects our health. Water is also very important for our bodies, as our bodies consist of over 50 percent water. If we lack water, we can feel weak or dehydrated. Our eating patterns also need to be regulated to avoid diseases like obesity. Exercise is also crucial in maintaining our physical fitness. It can be done lightly but regularly. By doing so, we will feel fresher and more energetic in our activities.</p>
                         <blockquote>
-                            <p class="mb-0">Kesehatan adalah anugerah dan nikmat yang paling berharga, cintai dirimu dengan menjaga kesehatan.
+                            <p class="mb-0">Health is a blessing and the most valuable gift; love yourself by maintaining your health.
                             </p>
                         </blockquote>
-                        <p class="short-desc">Menjaga kesehatan diperlukan niat dan juga usaha. Terkadang karena begitu banyak hidangan enak dan menggugah selera, terjadi kalap dan lupa mengontrol pola makan. Ketika sakit melanda, baru tersadar dan mengeluh. Ini hanya tentang bagaimana cara mengontrol. Mengontrol supaya tidak melewati batasan yang dapat diterima tubuh. Cintai dirimu, mulai dengan cara yang sederhana saja, atur kapan kamu makan, apa saja yang dapat dikonsumsi, olahraga ringan saja, kurangi makanan berlemak dan siap saji, dan konsumsi buah dan sayur sebagai asupan serat yang baik buat tubuh. Buah dan sayur memiliki rasa dan jenis yang beragam. Nutrisinya juga sangat baik buat tubuh, ada vitamin, mineral, antioksidan, dan masih banyak lagi. Dapat juga mencegah berbagai penyakit. Dijamin tidak bosan deh mengkonsumsinya. Ingat sahabat carik, buah dan sayur jangan dilupakan dalam asupan makanan setiap harinya ya.
+                        <p class="short-desc">Maintaining health requires intention and effort. Sometimes, because of so many delicious and tempting dishes, we can overindulge and forget to control our diet. When illness strikes, we only realize it and complain. It's all about how to control ourselves. Control so that we don’t exceed the limits acceptable to our bodies. Love yourself, start with simple ways, like regulating when you eat, what you can consume, light exercise, reducing fatty and fast food, and consuming fruits and vegetables as good sources of fiber for the body. Fruits and vegetables come in various tastes and types. Their nutrition is also very beneficial for the body, containing vitamins, minerals, antioxidants, and much more. They can also prevent various diseases. You definitely won't get bored consuming them. Remember, friends, don’t forget to include fruits and vegetables in your daily diet.
                         </p>
                         <div class="blog-banner row">
                             <div class="single-img img-hover-effect col-sm-6">
@@ -56,7 +56,7 @@
                                 <img class="img-full" src="{{ asset('customer/assets/images/blog/medium-size/2-2-370x270.jpg') }}" alt="Blog Banner">
                             </div>
                         </div>
-                        <p class="short-desc mb-0">Buah dan sayur adalah sumber nutrisi yang sangat baik buat tubuh. Perhatikan cara pengolahannya ya. Ada yang dimakan langsung, direbus, ditumis, dan lainnya. Tetapi, tetap ingat ya, jangan banyak minyak (lemak). Misalnya saja buah, yang dapat diolah menjadi rujak, huhu sangat enak bukan? nah, banyak inovasi yang muncul dari itu. Ada buah mangga, jeruk, salak, buah naga, sayur kangkung, sayur daun singkong, dan banyak lagi. Di Carik Bali menyediakan hasil panen buah dan sayur yang tentunya baik untuk kesehatan, berkualitas, dan dipanen dari kebun langsung. Pokoknya percaya deh, tinggal pilih, pesan, bayar, dan barang pun segera tiba di lokasi Anda.
+                        <p class="short-desc mb-0">Fruits and vegetables are excellent sources of nutrition for the body. Pay attention to how they are prepared. Some can be eaten raw, boiled, stir-fried, and so on. But remember not to use too much oil (fat). For example, fruits can be made into a salad, which is very delicious, right? There are many innovations that come from this. There are mangoes, oranges, salak (snake fruit), dragon fruit, water spinach, cassava leaves, and many more. At Carik Bali, we provide fresh produce that is healthy, high quality, and harvested directly from the farm. Just trust us; all you need to do is choose, order, pay, and the goods will arrive at your location shortly.
                         </p>
                     </div>
                     <div class="social-with-tags">
@@ -64,10 +64,10 @@
                             <span class="title">Tags: </span>
                             <ul>
                                 <li>
-                                    <a href="#">Kesehatan,</a>
+                                    <a href="#">Health,</a>
                                 </li>
                                 <li>
-                                    <a href="#">Sayuran</a>
+                                    <a href="#">Vegetables</a>
                                 </li>
                             </ul>
                         </div>

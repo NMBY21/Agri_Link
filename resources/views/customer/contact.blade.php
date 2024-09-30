@@ -8,12 +8,12 @@
             <div class="row h-100">
                 <div class="col-lg-12">
                     <div class="breadcrumb-item">
-                        <h1 class="breadcrumb-heading">Kontak Kami</h1>
+                        <h1 class="breadcrumb-heading">Contact Us</h1>
                         <ul>
                             <li>
                                 <a href="{{ url('/customer/dashboard') }}">Home</a>
                             </li>
-                            <li>Kontak Kami</li>
+                            <li>Contact Us</li>
                         </ul>
                     </div>
                 </div>
@@ -25,10 +25,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="about-content">
-                        <h2 class="about-title">Cerita <span>Kami</span></h2>
-                        <p class="about-desc">Carik Bali merupakan usaha lokal Bali yang menjual berbagai hasil panen pertanian dan perkebunan daerah Bali. Carik Bali terinspirasi dari banyaknya lahan pertanian dan perkebunan di Bali. Banyak petani kesulitan menjual atau menyalurkan hasil panennya ke konsumen langsung, sehingga menjual sekedar dengan harga yang murah, dan cenderung merugikan petani, yang penting laku. Carik Bali mempunyai tujuan untuk mendukung pemasaran hasil panen petani Bali. Hasil pertanian dan perkebunan daerah Bali sangat beragam. Hal ini adalah potensi besar yang perlu dikelola dengan baik, untuk mewujudkan masyarakat yang mempunyai pangan kualitas baik.
-                            Mari bersama dukung petani lokal kita dengan pertanian dan perkebunannya, sehingga tercermin kebahagiaan para petani kita dan terus bersemangat berkarya untuk daerah.
-                            </p>
+                        <h2 class="about-title">Our <span>Story</span></h2>
+                        <p class="about-desc">Carik Bali is a local business in Bali that sells various agricultural and plantation products from the Bali region. Carik Bali is inspired by the abundance of agricultural and plantation land in Bali. Many farmers struggle to sell or channel their harvests directly to consumers, often selling at low prices, which tends to harm the farmers, as long as it sells. Carik Bali aims to support the marketing of Balinese farmers' harvests. The agricultural and plantation products from the Bali region are very diverse. This represents a significant potential that needs to be managed well to achieve a society with high-quality food.
+                            Let us support our local farmers with their agriculture and plantations, reflecting the happiness of our farmers and encouraging them to continue working for the region.
+                        </p>
                         <div class="about-signature">
                             <img src="{{ asset('customer/assets/images/about/icon/2.png') }}" alt="Signature">
                         </div>
@@ -49,8 +49,8 @@
                                 <img src="{{ asset('customer/assets/images/shipping/icon/car.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Bebas biaya kirim</h2>
-                                <p class="short-desc mb-0">Dibatasi pada Rp. 100.000 per pesanan</p>
+                                <h2 class="title">Free Shipping</h2>
+                                <p class="short-desc mb-0">Limited to Rp. 100,000 per order</p>
                             </div>
                         </div>
                     </div>
@@ -60,8 +60,8 @@
                                 <img src="{{ asset('customer/assets/images/shipping/icon/card.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Pembayaran Aman</h2>
-                                <p class="short-desc mb-0">Dengan gateway pembayaran kami</p>
+                                <h2 class="title">Secure Payment</h2>
+                                <p class="short-desc mb-0">With our payment gateway</p>
                             </div>
                         </div>
                     </div>
@@ -71,8 +71,8 @@
                                 <img src="{{ asset('customer/assets/images/shipping/icon/service.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Layanan Terbaik</h2>
-                                <p class="short-desc mb-0">Layanan Ramah & Dukungan dari kami</p>
+                                <h2 class="title">Best Service</h2>
+                                <p class="short-desc mb-0">Friendly service & support from us</p>
                             </div>
                         </div>
                     </div>

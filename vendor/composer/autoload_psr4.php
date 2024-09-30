@@ -39,6 +39,7 @@ return array(
     'Symfony\\Component\\ErrorHandler\\' => array($vendorDir . '/symfony/error-handler'),
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+    'Stichoza\\GoogleTranslate\\' => array($vendorDir . '/stichoza/google-translate-php/src'),
     'Spatie\\Permission\\' => array($vendorDir . '/spatie/laravel-permission/src'),
     'RealRashid\\SweetAlert\\' => array($vendorDir . '/realrashid/sweet-alert/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),

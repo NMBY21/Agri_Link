@@ -11,6 +11,12 @@ use App\Http\Controllers\SuperadminUserController;
 use App\Http\Controllers\SuperadminTransactionController;
 use App\Http\Controllers\CustomerProductController;
 use App\Http\Controllers\CustomerProfileController;
+use App\Http\Controllers\LanguageController;
+
+
+
+Route::get('/set-language/{lang}', [LanguageController::class, 'setLanguage'])->name('set-language');
+
 
 // Guest Routes
 Route::get('/', [HomeController::class, 'index'])->name('dashboard.guest');
@@ -69,7 +75,8 @@ Route::get('/superadmin/success', [SuperadminTransactionController::class, 'inde
 Route::group(['middleware' => ['auth', 'role:customer']], function() {
 
     // Customer Dashboard
-    Route::get('/customer/dashboard', [AuthController::class, 'index'])->name('dashboard.customer');
+    Route::get('/customer/dashboard', [AuthController::class, 'index'])->name('customer.dashboard');
+    
 
     // Customer Product Routes
     Route::get('/customer/product/{id}', [CustomerProductController::class, 'show'])->name('product.customer');
