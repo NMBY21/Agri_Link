@@ -19,6 +19,20 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/dashboard';
 
+
+    // Add this method to handle redirection after login based on roles
+public function redirectPath()
+{
+    if (Auth::user()->hasRole('superadmin')) {
+        return '/superadmin/dashboard';
+    } elseif (Auth::user()->hasRole('customer')) {
+        return '/customer/dashboard';
+    }
+
+    return '/dashboard'; // Fallback
+}
+
+
     /**
      * The controller namespace for the application.
      *

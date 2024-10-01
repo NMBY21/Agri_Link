@@ -21,7 +21,10 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact.guest'
 // Login Filter Session
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', [AuthController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [SuperadminController::class, 'index'])->name('dashboard');
+    Route::get('/customers', [SuperadminController::class, 'customerData'])->name('customers.data');
 });
+
 
 // Superadmin Routes
 Route::get('/superadmin/login', [AuthController::class, 'superadminlogin'])->name('login.superadmin');
@@ -29,6 +32,21 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function() {
 
     // Superadmin Dashboard
     Route::get('/superadmin/dashboard', [SuperadminController::class, 'index'])->name('superadmin.dashboard');
+
+
+    Route::group(['middleware' => ['role:superadmin']], function () {
+    // Routes that only superadmins can access
+    Route::get('/superadmin/dashboard', [SuperadminController::class, 'index']);
+});
+
+// Superadmin Routes (protected by role:superadmin middleware)
+Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
+
+    // Superadmin Dashboard
+    Route::get('/superadmin/dashboard', [SuperadminController::class, 'index'])->name('superadmin.dashboard');
+});
+
+
 
     // Superadmin Product Routes
     Route::get('/superadmin/product', [SuperadminProductController::class, 'index'])->name('product.superadmin');
@@ -46,7 +64,6 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function() {
     Route::get('/superadmin/customer', [SuperadminUserController::class, 'index'])->name('user.superadmin');
     Route::post('/superadmin/customer', [SuperadminUserController::class, 'store'])->name('post.user.superadmin');
     Route::get('/superadmin/customers', [SuperadminController::class, 'customerData'])->name('superadmin.customers');
-
     Route::post('/superadmin/customer/edit/{id}', [SuperadminUserController::class, 'update'])->name('update.user.superadmin');
     Route::delete('/superadmin/customer/delete/{id}', [SuperadminUserController::class, 'destroy'])->name('delete.user.superadmin');
 
@@ -54,7 +71,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function() {
     Route::get('/superadmin/progress', [SuperadminTransactionController::class, 'indexprogress'])->name('transaction.progress.superadmin');
     Route::post('/superadmin/progress/confirm/{id}', [SuperadminTransactionController::class, 'confirmprogress'])->name('confirm.transaction.progress.superadmin');
     Route::post('/superadmin/progress/confirm/cancel/{id}', [SuperadminTransactionController::class, 'cancelprogress'])->name('cancel.transaction.progress.superadmin');
-    
+
     Route::get('/superadmin/delivery', [SuperadminTransactionController::class, 'indexdelivery'])->name('transaction.delivery.superadmin');
     Route::post('/superadmin/delivery/confirm/{id}', [SuperadminTransactionController::class, 'confirmdelivery'])->name('confirm.transaction.delivery.superadmin');
     Route::post('/superadmin/delivery/confirm/cancel/{id}', [SuperadminTransactionController::class, 'canceldelivery'])->name('cancel.transaction.delivery.superadmin');
@@ -67,8 +84,14 @@ Route::get('/superadmin/success', [SuperadminTransactionController::class, 'inde
 Route::group(['middleware' => ['auth', 'role:customer']], function() {
 
     // Customer Dashboard
-    Route::get('/customer/dashboard', [AuthController::class, 'index'])->name('dashboard.customer');
+    Route::get('/customer/dashboard', [CustomerController::class, 'index'])->name('dashboard.customer');
+ Route::group(['middleware' => ['role:customer']], function () {
+    // Routes that only superadmins can access
+    Route::get('/customer/dashboard', [AuthController::class, 'index']);
+    Route::get('/dashboard/customer', [CustomerController::class, 'index'])->name('dashboard.customer');
 
+
+ });
     // Customer Product Routes
     Route::get('/customer/product/{id}', [CustomerProductController::class, 'show'])->name('product.customer');
     Route::post('/customer/order', [CustomerProductController::class, 'store'])->name('order.product.customer');
@@ -92,3 +115,5 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 // Include additional authentication routes
 require __DIR__.'/auth.php';
+
+

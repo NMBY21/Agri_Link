@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Laratrust\Traits\LaratrustUserTrait;
+use Laratrust\Traits\LaratrustUserTrait; // Add this line
 
 class User extends Authenticatable
 {
-    use LaratrustUserTrait, HasApiTokens, HasFactory, Notifiable;
+    use LaratrustUserTrait, HasApiTokens, HasFactory, Notifiable; // Use this trait
 
     protected $fillable = [
         'name',

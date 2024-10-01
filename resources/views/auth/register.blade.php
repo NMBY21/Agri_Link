@@ -144,6 +144,13 @@
                                             <label>Confirm Password</label>
                                             <input type="password" name="password_confirmation" placeholder="Konfirmasi Kata Sandi" required>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="role">Role</label>
+                                            <select name="role" id="role" class="form-control">
+                                                <option value="customer">Customer</option>
+                                                <option value="superadmin">Superadmin</option>
+                                            </select>
+                                        </div>
                                         <div class="col-lg-12 pt-5">
                                             <button class="btn btn-custom-size lg-size btn-pronia-primary" type="submit">Register</button>
                                             <a class="btn btn-custom-size lg-size btn-pronia-primary ml-5" href="/login">Login</a>
