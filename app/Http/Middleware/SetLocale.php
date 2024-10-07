@@ -10,11 +10,7 @@ class SetLocale
 {
     public function handle($request, Closure $next)
     {
-        // Check if the session has a locale set
-        if (Session::has('locale')) {
-            App::setLocale(Session::get('locale'));
-        }
-
-        return $next($request);
+      app()->setLocale($request->segment(1));
+      return $next($request);
     }
 }

@@ -17,7 +17,9 @@ use App\Http\Controllers\LanguageController;
 
 Route::get('/set-language/{lang}', [LanguageController::class, 'setLanguage'])->name('set-language');
 
-
+Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () {
+    
+});
 // Guest Routes
 Route::get('/', [HomeController::class, 'index'])->name('dashboard.guest');
 Route::get('/product/{id}', [HomeController::class, 'product'])->name('product.guest');

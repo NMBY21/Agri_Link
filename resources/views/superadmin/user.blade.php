@@ -184,7 +184,17 @@
                                         </form>
                                       </div>
                                     </div>
-                                </div>
+
+                                </div> 
+                                <div class="dropdown">
+                                    <button class="btn btn-item secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        change status
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">status to farmer</a>
+                                        <a class="dropdown-item" href="#">status to superadmin</a>
+                                    </div>
+</div>
                             </td>
                         </tr>
                         @endforeach
