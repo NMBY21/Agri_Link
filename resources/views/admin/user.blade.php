@@ -23,7 +23,6 @@
                             <th>Email User</th>
                             <th>Number Phone</th>
                             <th>Status</th>
-                            <th>Role</th> <!-- New Role Column -->
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -34,7 +33,6 @@
                             <th>Email User</th>
                             <th>Number Phone</th>
                             <th>Status</th>
-                            <th>Role</th> <!-- New Role Column -->
                             <th>Action</th>
                         </tr>
                     </tfoot>
@@ -56,20 +54,6 @@
                                 @else
                                 <span class="badge bg-danger">Non-Active</span>
                                 @endif
-                            </td>
-                            <td>
-                                <form action="{{ route('admin.users.updateRole', $item) }}" method="POST">
-                                    @csrf
-                                    <select name="role" class="form-select" onchange="this.form.submit()">
-                                        <option value="">Select Role</option>
-                                        @foreach ($roles as $role)
-                                        <option value="{{ $role->name }}" {{ $item->hasRole($role->name) ? 'selected' :
-                                            '' }}>
-                                            {{ ucfirst($role->name) }}
-                                        </option>
-                                        @endforeach
-                                    </select>
-                                </form>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-info" data-bs-toggle="modal"
@@ -164,7 +148,7 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <form method="POST"
-                                                action="{{ url('admin/customer/edit') }}/{{ $item->id }}"
+                                                action="{{ url('superadmin/customer/edit') }}/{{ $item->id }}"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="modal-body">

@@ -10,25 +10,25 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminUserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $data = DB::table('role_user')->join('users', 'role_user.user_id', '=', 'users.id')->where('role_id', '=', '2')->where('status_user', '>', '0')->get();
+        $data = $this->fetchAllUsers(); // Fetch all users
         return view('admin.user', compact('data'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+        // Validate input fields
+        $request->validate([
+            'name_input' => 'required|string|max:255',
+            'email_input' => 'required|email|unique:users,email',
+            'number_input' => 'required|numeric',
+            'password_input' => 'required|min:6',
+            'address_input' => 'required|string',
+            'status_input' => 'required|integer',
+        ]);
+
+        // Create a new user
         $user = User::create([
             'name' => $request->name_input,
             'email' => $request->email_input,
@@ -38,79 +38,71 @@ class AdminUserController extends Controller
             'status_user' => $request->status_input,
         ]);
 
+        // Assuming you want to assign a role here as well
         $user->attachRole('customer');
 
         Alert::success('Success Message', 'Success Save');
-        $data = DB::table('role_user')->join('users', 'role_user.user_id', '=', 'users.id')->where('role_id', '=', '2')->where('status_user', '>', '0')->get();
-        return redirect()->route('user.admin')->with(['data']);
+
+        // Redirect with updated data
+        return redirect()->route('user.admin')->with(['data' => $this->fetchAllUsers()]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        if($request->password_input == null)
-        {
-            User::where('id', $id)->update([
-                'name' => $request->name_input,
-                'email' => $request->email_input,
-                'number_phone' => $request->number_input,
-                'address_user' => $request->address_input,
-                'status_user' => $request->status_input,
-            ]);
+        // Validate inputs
+        $request->validate([
+            'name_input' => 'required|string|max:255',
+            'email_input' => 'required|email|unique:users,email,' . $id,
+            'number_input' => 'required|numeric',
+            'address_input' => 'required|string',
+            'status_input' => 'required|integer',
+            'password_input' => 'nullable|min:6', // Password is optional
+        ]);
 
-            Alert::success('Success Message', 'Success Save');
-            $data = DB::table('role_user')->join('users', 'role_user.user_id', '=', 'users.id')->where('role_id', '=', '2')->where('status_user', '>', '0')->get();
-            return redirect()->route('user.admin')->with(['data']);
-        }
-        else
-        {
-            User::where('id', $id)->update([
-                'name' => $request->name_input,
-                'email' => $request->email_input,
-                'number_phone' => $request->number_input,
-                'password' => Hash::make($request->password_input),
-                'address_user' => $request->address_input,
-                'status_user' => $request->status_input,
-            ]);
+        // Update user data based on password existence
+        $updateData = [
+            'name' => $request->name_input,
+            'email' => $request->email_input,
+            'number_phone' => $request->number_input,
+            'address_user' => $request->address_input,
+            'status_user' => $request->status_input,
+        ];
 
-            Alert::success('Success Message', 'Success Save');
-            $data = DB::table('role_user')->join('users', 'role_user.user_id', '=', 'users.id')->where('role_id', '=', '2')->where('status_user', '>', '0')->get();
-            return redirect()->route('user.admin')->with(['data']);
+        if ($request->password_input) {
+            $updateData['password'] = Hash::make($request->password_input);
         }
 
+        User::where('id', $id)->update($updateData);
+
+        Alert::success('Success Message', 'Success Save');
+
+        return redirect()->route('user.admin')->with(['data' => $this->fetchAllUsers()]);
     }
-public function updateRole(Request $request, User $user)
+
+    public function updateRole(Request $request, User $user)
     {
-        // Validate the request
         $request->validate([
             'role' => 'required|exists:roles,name',
         ]);
 
-        // Sync roles with the user
         $user->syncRoles($request->role);
 
         return redirect()->back()->with('success', 'User role updated successfully.');
     }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        User::where('id', $id)->update([
-            'status_user' => '-1',
-        ]);
+        User::where('id', $id)->update(['status_user' => '-1']);
 
         Alert::success('Success Message', 'Success Delete');
-        $data = DB::table('role_user')->join('users', 'role_user.user_id', '=', 'users.id')->where('role_id', '=', '2')->where('status_user', '>', '0')->get();
-        return redirect()->route('user.admin')->with(['data']);
+
+        return redirect()->route('user.admin')->with(['data' => $this->fetchAllUsers()]);
+    }
+
+    // Private method to fetch all active users
+    private function fetchAllUsers()
+    {
+        // Fetch all users with a status greater than '0' (assuming '0' means inactive)
+        return User::where('status_user', '>', '0')->get();
     }
 }

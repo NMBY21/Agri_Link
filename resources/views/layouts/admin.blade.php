@@ -39,9 +39,9 @@
             <a class="sidebar-brand d-flex align-items-center justify-content-center"
                 href="{{ url('/superadmin/dashboard') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    {{-- <i class="fas fa-laugh-wink"></i> --}}
                 </div>
-                <div class="sidebar-brand-text mx-3">SuperAdmin</div>
+                <div class="sidebar-brand-text mx-3">SUPERADMIN</div>
             </a>
 
             <!-- Divider -->
@@ -87,10 +87,10 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Transactions:</h6>
-                        <a class="collapse-item" href="/admin/progress">Transaction in Progress</a>
-                        <a class="collapse-item" href="/admin/delivery">Transaction in Delivery</a>
-                        <a class="collapse-item" href="/admin/success">Transaction in Successfully</a>
-                        <a class="collapse-item" href="/admin/failed">Transaction in Failed</a>
+                        <a class="collapse-item" href="{{ url('/admin/progress') }}">Transaction in Progress</a>
+                        <a class="collapse-item" href="{{url('/admin/delivery')}}">Transaction in Delivery</a>
+                        <a class="collapse-item" href="{{url('/admin/success"')}}">Transaction in Successfully</a>
+                        <a class="collapse-item" href="{{url('/admin/failed')}}">Transaction in Failed</a>
                     </div>
                 </div>
             </li>
@@ -146,7 +146,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Superadmin</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset('admin/img/undraw_profile.svg') }}">
+                                    src="{{ asset('superadmin/img/undraw_profile.svg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
