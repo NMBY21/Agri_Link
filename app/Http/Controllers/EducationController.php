@@ -111,6 +111,11 @@ class EducationController extends Controller
 
 
     // Default: show a list of educations
+    public function index()
+{
+    $educations = Education::paginate(10); // Show 10 items per page
+    return view('admin.education.index', compact('educations'));
+}
     }
 
 

@@ -31,9 +31,8 @@ Route::get('/education/{id}', [EducationController::class, 'show'])->name('educa
 
 
 // Authenticated Routes (Common to all roles)
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [AuthController::class, 'index'])->name('dashboard');
-
 });
 
 
@@ -47,7 +46,6 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::post('/admin/user/store', [AdminUserController::class, 'store'])->name('user.store');
 
     // admin education routes
-    Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('/admin/education', [EducationController::class, 'index'])->name('education.index'); // List all articles
     Route::get('/admin/education/create', [EducationController::class, 'create'])->name('education.create'); // Create form
     Route::post('/admin/education/store', [EducationController::class, 'store'])->name('education.store'); // Save new article
@@ -56,9 +54,6 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::delete('/admin/education/delete/{id}', [EducationController::class, 'destroy'])->name('education.delete'); // Delete article
     Route::get('/education/{id}', [EducationController::class, 'show'])->name('education.show');
     Route::delete('/admin/education/delete/{id}', [EducationController::class, 'destroy'])->name('education.destroy');
-
-});
-
 
 
     // admin Product Routes
@@ -78,7 +73,6 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     // admin Transaction Routes
     Route::get('/admin/progress', [AdminTransactionController::class, 'indexprogress'])->name('transaction.progress.admin');
     Route::get('/admin/delivery', [AdminTransactionController::class, 'indexdelivery'])->name('transaction.delivery.admin');
-
 });
 
 
@@ -117,9 +111,10 @@ Route::group(['middleware' => ['auth', 'role:customer']], function () {
     // Customer Payment
     Route::post('/customer/payment/transfer', [CustomerProductController::class, 'transfer'])->name('transfer.product.customer');
     Route::post('/customer/payment/cod', [CustomerProductController::class, 'cod'])->name('cod.product.customer');
+
 });
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 // Include additional authentication routes
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

@@ -127,13 +127,13 @@
                                                                     value="{{ $item->tags_product }}"
                                                                     placeholder="Tags Product ..." required>
                                                                 <div id="emailHelp" class="form-text">tags : fruit,
-                                                                    banana, dll</div>
+                                                                    banana</div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="mb-3">
                                                                 <label for="exampleFormControlTextarea1"
-                                                                    class="form-label">SKU Product</label>
+                                                                    class="form-label">Product</label>
                                                                 <input class="form-control" name="sku_input"
                                                                     value="{{ $item->sku_product }}" readonly>
                                                             </div>
@@ -157,7 +157,7 @@
                                                                     class="form-label">Price Product</label>
                                                                 <div class="input-group">
                                                                     <span class="input-group-text"
-                                                                        id="basic-addon1">Rp</span>
+                                                                        id="basic-addon1">birr</span>
                                                                     <input type="number" class="form-control"
                                                                         value="{{ $item->price_product }}"
                                                                         placeholder="Price Product ..."

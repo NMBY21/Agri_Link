@@ -98,15 +98,15 @@
                                 <nav class="main-nav">
                                     <ul>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/dashboard') }}">Home</a>
+                                            <a href="{{ url('/dashboard') }}">Home</a>
                                             {{-- <a href="{{ url('/customer/dashboard') }}">Home</a> --}}
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/dashboard') }}#produk">Product</a>
+                                            <a href="{{ url('/dashboard') }}#produk">Product</a>
                                             {{-- <a href="{{ url('/#produk') }}">Product</a> --}}
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/education') }}">Education</a>
+                                            <a href="{{ url('/education') }}">Education</a>
                                             {{-- <a href="{{ url('/education') }}">Education</a> --}}
                                         </li>
                                         <li class="drop-holder">
