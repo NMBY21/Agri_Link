@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminTransactionController;
 use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\EducationController;
 
 
 
@@ -25,6 +26,9 @@ Route::get('/', [HomeController::class, 'index'])->name('dashboard.guest');
 Route::get('/product/{id}', [HomeController::class, 'product'])->name('product.guest');
 Route::get('/education', [HomeController::class, 'education'])->name('education.guest');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact.guest');
+Route::get('/education', [EducationController::class, 'publicIndex'])->name('education.guest');
+Route::get('/education/{id}', [EducationController::class, 'show'])->name('education.show');
+
 
 // Authenticated Routes (Common to all roles)
 Route::group(['middleware' => ['auth']], function() {
@@ -42,6 +46,18 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('/admin/users', [AdminUserController::class, 'index'])->name('user.admin');
     Route::post('/admin/user/store', [AdminUserController::class, 'store'])->name('user.store');
 
+    // admin education routes
+    Route::group(['middleware' => ['auth', 'role:admin']], function () {
+    Route::get('/admin/education', [EducationController::class, 'index'])->name('education.index'); // List all articles
+    Route::get('/admin/education/create', [EducationController::class, 'create'])->name('education.create'); // Create form
+    Route::post('/admin/education/store', [EducationController::class, 'store'])->name('education.store'); // Save new article
+    Route::get('/admin/education/edit/{id}', [EducationController::class, 'edit'])->name('education.edit'); // Edit form
+    Route::put('/admin/education/update/{id}', [EducationController::class, 'update'])->name('education.update'); // Update article
+    Route::delete('/admin/education/delete/{id}', [EducationController::class, 'destroy'])->name('education.delete'); // Delete article
+    Route::get('/education/{id}', [EducationController::class, 'show'])->name('education.show');
+    Route::delete('/admin/education/delete/{id}', [EducationController::class, 'destroy'])->name('education.destroy');
+
+});
 
 
 

@@ -94,7 +94,23 @@
                     </div>
                 </div>
             </li>
+<!-- Nav Item - Education Management -->
+<div class="sidebar-heading">
+    Education
+</div>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url('/admin/education') }}">
+        <i class="fas fa-fw fa-book"></i>
+        <span>View Education</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('education.create') }}">
+        <i class="fas fa-fw fa-plus"></i>
+        <span>Create Education</span></a>
+</li>
 
+<!-- Divider -->
+<hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
