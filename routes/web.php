@@ -38,7 +38,9 @@ Route::group(['middleware' => ['auth']], function() {
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/users', [AdminUserController::class, 'index'])->name('admin.users.index');
-    Route::post('/admin/users/{user}/role', [AdminUserController::class, 'updateRole'])->name('admin.users.updateRole');
+    Route::put('admin/user/role/{id}', [AdminUserController::class, 'updateRole'])->name('user.role.update');
+    Route::delete('/admin/user/{id}', [AdminUserController::class, 'destroy'])->name('user.destroy');
+
 
     // admin Product Routes
     Route::get('/admin/product', [AdminProductController::class, 'index'])->name('product.admin');

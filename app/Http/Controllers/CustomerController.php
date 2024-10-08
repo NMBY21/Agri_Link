@@ -7,9 +7,6 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Models\Customer;
-use App\Models\Role;
-use App\Models\User;
 
 class CustomerController extends Controller
 {
@@ -18,16 +15,10 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
- public function index()
+    public function index()
     {
-        // Fetch all customers
-        // $data = Customer::all();
-        $data = User::all(); // Or use a condition to filter
-        // Fetch all roles (if using a roles table)
-        // $roles = Role::all();
-
-        // Return the view with data
-        return view('admin.user', compact('data', 'roles'));
+        $data = Product::where('status_product', '>', '0')->get();
+        return view('customer.dashboard', compact('data'));
     }
 
     /**

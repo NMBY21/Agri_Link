@@ -1,4 +1,3 @@
-<!-- resources/views/superadmin/customers.blade.php -->
 @extends('layouts.admin')
 
 @section('content')

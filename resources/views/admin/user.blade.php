@@ -23,6 +23,7 @@
                             <th>Email User</th>
                             <th>Number Phone</th>
                             <th>Status</th>
+                            <th>Role</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -33,6 +34,7 @@
                             <th>Email User</th>
                             <th>Number Phone</th>
                             <th>Status</th>
+                            <th>Role</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
@@ -56,9 +58,27 @@
                                 @endif
                             </td>
                             <td>
+                                <form method="POST" action="{{ route('user.role.update', $item->id) }}">
+                                    @csrf
+                                    @method('PUT')
+                                    <select name="role" onchange="this.form.submit()">
+                                        <option value="customer" {{ $item->roles->contains('name', 'customer') ?
+                                            'selected' : '' }}>Customer
+                                        </option>
+                                        <option value="admin" {{ $item->roles->contains('name', 'admin') ? 'selected' :
+                                            '' }}>Admin</option>
+                                        <option value="superadmin" {{ $item->roles->contains('name', 'superadmin') ?
+                                            'selected' : '' }}>Superadmin
+                                        </option>
+                                    </select>
+                                </form>
+                            </td>
+                            <td>
+                                <!-- Detail Button -->
                                 <button type="button" class="btn btn-info" data-bs-toggle="modal"
                                     data-bs-target="#staticBackdrop3{{ $item->id }}">Detail</button>
 
+                                <!-- Detail Modal -->
                                 <div class="modal fade" id="staticBackdrop3{{ $item->id }}" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                     aria-hidden="true">
@@ -134,21 +154,23 @@
                                     </div>
                                 </div>
 
+                                <!-- Edit Button -->
                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                     data-bs-target="#staticBackdrop2{{ $item->id }}">Edit</button>
 
+                                <!-- Edit Modal -->
                                 <div class="modal fade" id="staticBackdrop2{{ $item->id }}" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="staticBackdropLabel">Edit Data Product</h5>
+                                                <h5 class="modal-title" id="staticBackdropLabel">Edit Data Customer</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
                                             <form method="POST"
-                                                action="{{ url('superadmin/customer/edit') }}/{{ $item->id }}"
+                                                action="{{ url('admin/customer/edit') }}/{{ $item->id }}"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="modal-body">
@@ -231,6 +253,15 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Delete Button -->
+                                <form method="POST" action="{{ route('user.destroy', $item->id) }}"
+                                    style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger"
+                                        onclick="return confirm('Are you sure you want to delete this user?');">Delete</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

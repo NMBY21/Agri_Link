@@ -79,25 +79,38 @@ class AdminUserController extends Controller
         return redirect()->route('user.admin')->with(['data' => $this->fetchAllUsers()]);
     }
 
-    public function updateRole(Request $request, User $user)
-    {
-        $request->validate([
-            'role' => 'required|exists:roles,name',
-        ]);
+    public function updateRole(Request $request, $id)
+{
+    // Validate the role input
+    $request->validate([
+        'role' => 'required|exists:roles,name',
+    ]);
 
-        $user->syncRoles($request->role);
+    $user = User::findOrFail($id);
 
-        return redirect()->back()->with('success', 'User role updated successfully.');
+    // Fetch the role ID from the roles table
+    $role = DB::table('roles')->where('name', $request->role)->first();
+
+    if (!$role) {
+        return redirect()->back()->withErrors(['role' => 'Invalid role selected.']);
     }
+
+    // Sync the role using the role ID
+    $user->roles()->sync([$role->id]);
+
+    return redirect()->back()->with('success', "User role updated to '{$request->role}' successfully.");
+}
+
 
     public function destroy($id)
-    {
-        User::where('id', $id)->update(['status_user' => '-1']);
+{
+    User::where('id', $id)->update(['status_user' => '-1']); // Or use User::destroy($id) for a permanent delete
 
-        Alert::success('Success Message', 'Success Delete');
+    Alert::success('Success Message', 'Success Delete');
 
-        return redirect()->route('user.admin')->with(['data' => $this->fetchAllUsers()]);
-    }
+    return redirect()->route('user.admin')->with(['data' => $this->fetchAllUsers()]);
+}
+
 
     // Private method to fetch all active users
     private function fetchAllUsers()
@@ -105,4 +118,6 @@ class AdminUserController extends Controller
         // Fetch all users with a status greater than '0' (assuming '0' means inactive)
         return User::where('status_user', '>', '0')->get();
     }
+
+
 }
