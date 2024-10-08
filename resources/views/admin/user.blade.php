@@ -9,7 +9,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createUserModal">
                 Input Data Customer
             </button>
         </div>
@@ -268,6 +268,53 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createUserModalLabel">Create New User</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" action="{{ route('user.store') }}">
+                @csrf
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>Name Customer</label>
+                        <input type="text" class="form-control" name="name_input" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Email Customer</label>
+                        <input type="email" class="form-control" name="email_input" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Number Phone Customer</label>
+                        <input class="form-control" name="number_input" type="number" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Password Customer</label>
+                        <input class="form-control" type="password" name="password_input" required>
+                        <div class="form-text">Password minimum 8 characters</div>
+                    </div>
+                    <div class="mb-3">
+                        <label>Address Customer</label>
+                        <textarea class="form-control" name="address_input" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label>Status User</label>
+                        <select class="form-select" name="status_input" required>
+                            <option value="1">Active</option>
+                            <option value="0">Non-Active</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Create User</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

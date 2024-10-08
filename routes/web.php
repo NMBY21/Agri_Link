@@ -37,9 +37,12 @@ Route::group(['middleware' => ['auth']], function() {
 // Admin Routes (Role-based access for Admin)
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/admin/users', [AdminUserController::class, 'index'])->name('admin.users.index');
     Route::put('admin/user/role/{id}', [AdminUserController::class, 'updateRole'])->name('user.role.update');
     Route::delete('/admin/user/{id}', [AdminUserController::class, 'destroy'])->name('user.destroy');
+    Route::get('/admin/users', [AdminUserController::class, 'index'])->name('user.admin');
+    Route::post('/admin/user/store', [AdminUserController::class, 'store'])->name('user.store');
+
+
 
 
     // admin Product Routes
@@ -48,11 +51,13 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::post('/admin/product/edit/{id}', [AdminProductController::class, 'update'])->name('update.product.admin');
     Route::delete('/admin/product/delete/{id}', [AdminProductController::class, 'destroy'])->name('delete.product.admin');
 
+
     // admin Customer Routes
     Route::get('/admin/customer', [AdminUserController::class, 'index'])->name('user.admin');
     Route::post('/admin/customer', [AdminUserController::class, 'store'])->name('post.user.admin');
     Route::post('/admin/customer/edit/{id}', [AdminUserController::class, 'update'])->name('update.user.admin');
     Route::delete('/admin/customer/delete/{id}', [AdminUserController::class, 'destroy'])->name('delete.user.admin');
+
 
     // admin Transaction Routes
     Route::get('/admin/progress', [AdminTransactionController::class, 'indexprogress'])->name('transaction.progress.admin');

@@ -17,35 +17,33 @@ class AdminUserController extends Controller
     }
 
     public function store(Request $request)
-    {
-        // Validate input fields
-        $request->validate([
-            'name_input' => 'required|string|max:255',
-            'email_input' => 'required|email|unique:users,email',
-            'number_input' => 'required|numeric',
-            'password_input' => 'required|min:6',
-            'address_input' => 'required|string',
-            'status_input' => 'required|integer',
-        ]);
+{
+    // Validate input fields
+    $request->validate([
+        'name_input' => 'required|string|max:255',
+        'email_input' => 'required|email|unique:users,email',
+        'number_input' => 'required|numeric',
+        'password_input' => 'required|min:6',
+        'address_input' => 'required|string',
+        'status_input' => 'required|integer',
+    ]);
 
-        // Create a new user
-        $user = User::create([
-            'name' => $request->name_input,
-            'email' => $request->email_input,
-            'number_phone' => $request->number_input,
-            'password' => Hash::make($request->password_input),
-            'address_user' => $request->address_input,
-            'status_user' => $request->status_input,
-        ]);
 
-        // Assuming you want to assign a role here as well
-        $user->attachRole('customer');
+    // Create a new user
+    User::create([
+        'name' => $request->name_input,
+        'email' => $request->email_input,
+        'number_phone' => $request->number_input,
+        'password' => Hash::make($request->password_input),
+        'address_user' => $request->address_input,
+        'status_user' => $request->status_input,
+    ]);
 
-        Alert::success('Success Message', 'Success Save');
+    Alert::success('Success', 'User created successfully.');
 
-        // Redirect with updated data
-        return redirect()->route('user.admin')->with(['data' => $this->fetchAllUsers()]);
-    }
+    return redirect()->route('user.admin')->with('users', $this->fetchAllUsers());
+}
+
 
     public function update(Request $request, $id)
     {
