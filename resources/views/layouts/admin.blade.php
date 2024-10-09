@@ -9,12 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Carik Bali - Superadmin</title>
+    <title>Superadmin</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('superadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('superadmin/css/sb-admin-2.min.css') }}" rel="stylesheet">
@@ -33,9 +36,10 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/superadmin/dashboard') }}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center"
+                href="{{ url('/superadmin/dashboard') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    {{-- <i class="fas fa-laugh-wink"></i> --}}
                 </div>
                 <div class="sidebar-brand-text mx-3">SUPERADMIN</div>
             </a>
@@ -45,7 +49,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{ url('/superadmin/dashboard') }}">
+                <a class="nav-link" href="{{ url('/admin/dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -68,7 +72,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Products:</h6>
-                        <a class="collapse-item" href="{{ url('/superadmin/product') }}">Product</a>
+                        <a class="collapse-item" href="{{ url('/admin/product') }}">Product</a>
                     </div>
                 </div>
             </li>
@@ -83,16 +87,32 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Transactions:</h6>
-                        <a class="collapse-item" href="/superadmin/progress">Transaction in Progress</a>
-                        <a class="collapse-item" href="/superadmin/delivery">Transaction in Delivery</a>
-                        <a class="collapse-item" href="/superadmin/success">Transaction in Successfully</a>
-                        <a class="collapse-item" href="/superadmin/failed">Transaction in Failed</a>
+                        <a class="collapse-item" href="{{ url('/admin/progress') }}">Transaction in Progress</a>
+                        <a class="collapse-item" href="{{url('/admin/delivery')}}">Transaction in Delivery</a>
+                        <a class="collapse-item" href="{{url('/admin/success"')}}">Transaction in Successfully</a>
+                        <a class="collapse-item" href="{{url('/admin/failed')}}">Transaction in Failed</a>
                     </div>
                 </div>
             </li>
+<!-- Nav Item - Education Management -->
+<div class="sidebar-heading">
+    Education
+</div>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url('/admin/education') }}">
+        <i class="fas fa-fw fa-book"></i>
+        <span>View Education</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('education.create') }}">
+        <i class="fas fa-fw fa-plus"></i>
+        <span>Create Education</span></a>
+</li>
 
+<!-- Divider -->
+<hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
-            {{-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
                     <i class="fas fa-fw fa-user"></i>
@@ -101,11 +121,11 @@
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Customer:</h6>
-                        <a class="collapse-item" href="{{ url('/superadmin/customer') }}">Customer</a>
+                        <a class="collapse-item" href="{{ url('/admin/customer') }}">Customer</a>
 
                     </div>
                 </div>
-            </li> --}}
+            </li>
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -201,8 +221,7 @@
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <a class="btn btn-primary" href="route('logout')"
-                                onclick="event.preventDefault();
+                        <a class="btn btn-primary" href="route('logout')" onclick="event.preventDefault();
                                             this.closest('form').submit();">
                             Logout
                         </a>
@@ -216,7 +235,9 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('superadmin/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('superadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('superadmin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>

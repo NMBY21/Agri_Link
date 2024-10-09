@@ -76,8 +76,7 @@
                                                 <i class="pe-7s-users"></i>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="settingButton">
-                                                <li><a class="dropdown-item" href="{{ url('/login') }}">{{ __('Login as Customer') }}</a></li>
-                                                <li><a class="dropdown-item" href="{{ url('superadmin/login') }}">{{ __('Login as Farmer') }}</a></li>
+                                                <li><a class="dropdown-item" href="{{ url('/login') }}">Login</a></li>
                                             </ul>
                                         </li>
                                         <li class="mobile-menu_wrap d-block d-lg-none">

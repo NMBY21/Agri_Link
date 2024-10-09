@@ -4,56 +4,30 @@
 <!-- Begin Slider Area -->
 <div class="slider-area">
 
-        <!-- Main Slider -->
-        <div class="swiper-container main-slider swiper-arrow with-bg_white">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide animation-style-01">
-                    <div class="slide-inner style-1 bg-height" data-bg-image="{{ asset('customer/assets/images/slider/bg/1-1.jpg') }}">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6 order-2 order-lg-1 align-self-center">
-                                    <div class="slide-content text-black">
-                                        <span class="offer">Diskon 30%</span>
-                                        <h2 class="title">Produk Baru</h2>
-                                        <p class="short-desc">Pisang Cavendish Organik</p>
-                                        <div class="btn-wrap">
-                                            <a class="btn btn-custom-size xl-size btn-pronia-primary" href="#produk">Pesan Sekarang</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-8 offset-md-2 offset-lg-0 order-1 order-lg-2">
-                                    <div class="inner-img">
-                                        <div class="scene fill">
-                                            <div class="expand-width" data-depth="0.2">
-                                                <img src="{{ asset('customer/img/header2.jpeg') }}" alt="Inner Image">
-                                            </div>
-                                        </div>
+    <!-- Main Slider -->
+    <div class="swiper-container main-slider swiper-arrow with-bg_white">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide animation-style-01">
+                <div class="slide-inner style-1 bg-height"
+                    data-bg-image="{{ asset('customer/assets/images/slider/bg/1-1.jpg') }}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 align-self-center">
+                                <div class="slide-content text-black">
+                                    <span class="offer">Diskon 30%</span>
+                                    <h2 class="title">Produk Baru</h2>
+                                    <p class="short-desc">Pisang Cavendish Organik</p>
+                                    <div class="btn-wrap">
+                                        <a class="btn btn-custom-size xl-size btn-pronia-primary" href="#produk">Pesan
+                                            Sekarang</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide animation-style-01">
-                    <div class="slide-inner style-1 bg-height" data-bg-image="{{ asset('customer/assets/images/slider/bg/1-1.jpg') }}">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6 order-2 order-lg-1 align-self-center">
-                                    <div class="slide-content text-black">
-                                        <span class="offer">Diskon 30%</span>
-                                        <h2 class="title">Produk Baru</h2>
-                                        <p class="short-desc">Buah Pepaya Organik</p>
-                                        <div class="btn-wrap">
-                                            <a class="btn btn-custom-size xl-size btn-pronia-primary" href="#produk">Pesan Sekarang</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-8 offset-md-2 offset-lg-0 order-1 order-lg-2">
-                                    <div class="inner-img">
-                                        <div class="scene fill">
-                                            <div class="expand-width" data-depth="0.2">
-                                                <img src="{{ asset('customer/img/header1.jpeg') }}" alt="Inner Image">
-                                            </div>
+                            <div class="col-lg-6 col-md-8 offset-md-2 offset-lg-0 order-1 order-lg-2">
+                                <div class="inner-img">
+                                    <div class="scene fill">
+                                        <div class="expand-width" data-depth="0.2">
+                                            <img src="{{ asset('customer/img/header2.jpeg') }}" alt="Inner Image">
                                         </div>
                                     </div>
                                 </div>
@@ -62,8 +36,38 @@
                     </div>
                 </div>
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination d-md-none"></div>
+            <div class="swiper-slide animation-style-01">
+                <div class="slide-inner style-1 bg-height"
+                    data-bg-image="{{ asset('customer/assets/images/slider/bg/1-1.jpg') }}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 align-self-center">
+                                <div class="slide-content text-black">
+                                    <span class="offer">Diskon 30%</span>
+                                    <h2 class="title">Produk Baru</h2>
+                                    <p class="short-desc">Buah Pepaya Organik</p>
+                                    <div class="btn-wrap">
+                                        <a class="btn btn-custom-size xl-size btn-pronia-primary" href="#produk">Pesan
+                                            Sekarang</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-8 offset-md-2 offset-lg-0 order-1 order-lg-2">
+                                <div class="inner-img">
+                                    <div class="scene fill">
+                                        <div class="expand-width" data-depth="0.2">
+                                            <img src="{{ asset('customer/img/header1.jpeg') }}" alt="Inner Image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination d-md-none"></div>
 
         <!-- Add Arrows -->
         <div class="swiper-button-prev"></div>
@@ -84,8 +88,8 @@
                             <img src="{{ asset('customer/assets/images/shipping/icon/car.png') }}" alt="Shipping Icon">
                         </div>
                         <div class="shipping-content">
-                            <h2 class="title">Bebas biaya kirim</h2>
-                            <p class="short-desc mb-0">Dibatasi pada Rp. 100.000 per pesanan</p>
+                            {{-- <h2 class="title">Bebas biaya kirim</h2>
+                            <p class="short-desc mb-0">Dibatasi pada Rp. 100.000 per pesanan</p> --}}
                         </div>
                     </div>
                 </div>
@@ -95,8 +99,8 @@
                             <img src="{{ asset('customer/assets/images/shipping/icon/card.png') }}" alt="Shipping Icon">
                         </div>
                         <div class="shipping-content">
-                            <h2 class="title">Pembayaran Aman</h2>
-                            <p class="short-desc mb-0">Dengan gateway pembayaran kami</p>
+                            {{-- <h2 class="title">Pembayaran Aman</h2>
+                            <p class="short-desc mb-0">Dengan gateway pembayaran kami</p> --}}
                         </div>
                     </div>
                 </div>
@@ -107,8 +111,8 @@
                                 alt="Shipping Icon">
                         </div>
                         <div class="shipping-content">
-                            <h2 class="title">Layanan Terbaik</h2>
-                            <p class="short-desc mb-0">Layanan Ramah & Dukungan dari kami</p>
+                            {{-- <h2 class="title">Layanan Terbaik</h2>
+                            <p class="short-desc mb-0">Layanan Ramah & Dukungan dari kami</p> --}}
                         </div>
                     </div>
                 </div>
@@ -122,7 +126,7 @@
 <div class="product-area section-space-top-100" id="produk">
     <div class="container">
         <div class="section-title-wrap">
-            <h2 class="section-title mb-0">Produk</h2>
+            <h2 class="section-title mb-0">Product</h2>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -168,7 +172,8 @@
         <div class="testimonial-bg"
             data-bg-image="{{ asset('customer/assets/images/testimonial/bg/1-1-1820x443.jpg') }}">
             <div class="section-title-wrap">
-                <h2 class="section-title mb-0">Products</h2>
+                <h2 class="section-title">Apa kata customer</h2>
+                <p class="section-desc mb-0">Pelanggan Kami Menyukai Apa yang Kami Lakukan</p>
             </div>
         </div>
         <div class="container custom-space">
@@ -182,11 +187,11 @@
                                 </div>
                             </div>
                             <div class="user-content text-charcoal">
-                                <h4 class="user-name mb-1">Ibu Kadek Dobleh</h4>
-                                <span class="user-occupation">Ibu Rumah Tangga</span>
+                                {{-- <h4 class="user-name mb-1">Ibu Kadek Dobleh</h4>
+                                <span class="user-occupation">Ibu Rumah Tangga</span> --}}
                             </div>
                         </div>
-                        <p class="user-comment mb-6">Sayurnya bagus dan seger banget</p>
+                        <p class="user-comment mb-6"></p>
                     </div>
                     <div class="swiper-slide testimonial-item">
                         <div class="user-info mb-3">
@@ -196,11 +201,11 @@
                                 </div>
                             </div>
                             <div class="user-content text-charcoal">
-                                <h4 class="user-name mb-1">Ibu Made Rareh</h4>
-                                <span class="user-occupation">Ibu Rumah Tangga</span>
+                                {{-- <h4 class="user-name mb-1">Ibu Made Rareh</h4>
+                                <span class="user-occupation">Ibu Rumah Tangga</span> --}}
                             </div>
                         </div>
-                        <p class="user-comment mb-6">Pelayanannya ramah sekali :)</p>
+                        <p class="user-comment mb-6"></p>
                     </div>
                     <div class="swiper-slide testimonial-item">
                         <div class="user-info mb-3">
@@ -210,8 +215,8 @@
                                 </div>
                             </div>
                             <div class="user-content text-charcoal">
-                                <h4 class="user-name mb-1">Sumiyato</h4>
-                                <span class="user-occupation">Koki</span>
+                                {{-- <h4 class="user-name mb-1">Sumiyato</h4>
+                                <span class="user-occupation">Koki</span> --}}
                             </div>
                         </div>
                         <p class="user-comment mb-6">Produknya rekomended banget</p>
@@ -222,68 +227,6 @@
             </div>
         </div>
     </div>
-    <!-- Product Area End Here -->
-
-    <!-- Begin Testimonial Area -->
-    <div class="testimonial-area section-space-top-90 section-space-bottom-95" id="testimoni">
-        <div class="container-fluid">
-            <div class="testimonial-bg" data-bg-image="{{ asset('customer/assets/images/testimonial/bg/1-1-1820x443.jpg') }}">
-                <div class="section-title-wrap">
-                    <h2 class="section-title">What Customers Say</h2>
-                    <p class="section-desc mb-0">Our Customers Love What We Do</p>
-                </div>
-            </div>
-            <div class="container custom-space">
-                <div class="swiper-container testimonial-slider with-bg">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide testimonial-item">
-                            <div class="user-info mb-3">
-                                <div class="user-shape-wrap">
-                                    <div class="user-img">
-                                        <img src="{{ asset('customer/img/user.png') }}" alt="User Image">
-                                    </div>
-                                </div>
-                                <div class="user-content text-charcoal">
-                                    <h4 class="user-name mb-1">Mrs. Kadek Dobleh</h4>
-                                    <span class="user-occupation">Housewife</span>
-                                </div>
-                            </div>
-                            <p class="user-comment mb-6">The vegetables are great and very fresh</p>
-                        </div>
-                        <div class="swiper-slide testimonial-item">
-                            <div class="user-info mb-3">
-                                <div class="user-shape-wrap">
-                                    <div class="user-img">
-                                        <img src="{{ asset('customer/img/user.png') }}" alt="User Image">
-                                    </div>
-                                </div>
-                                <div class="user-content text-charcoal">
-                                    <h4 class="user-name mb-1">Mrs. Made Rareh</h4>
-                                    <span class="user-occupation">Housewife</span>
-                                </div>
-                            </div>
-                            <p class="user-comment mb-6">The service is very friendly :)</p>
-                        </div>
-                        <div class="swiper-slide testimonial-item">
-                            <div class="user-info mb-3">
-                                <div class="user-shape-wrap">
-                                    <div class="user-img">
-                                        <img src="{{ asset('customer/img/user.png') }}" alt="User Image">
-                                    </div>
-                                </div>
-                                <div class="user-content text-charcoal">
-                                    <h4 class="user-name mb-1">Sumiyato</h4>
-                                    <span class="user-occupation">Chef</span>
-                                </div>
-                            </div>
-                            <p class="user-comment mb-6">The products are highly recommended</p>
-                        </div>
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination without-absolute"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial Area End Here -->
+</div>
+<!-- Testimonial Area End Here -->
 @endsection

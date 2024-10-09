@@ -98,22 +98,28 @@
                                 <nav class="main-nav">
                                     <ul>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/dashboard') }}">Home</a>
+                                            <a href="{{ url('/dashboard') }}">Home</a>
+                                            {{-- <a href="{{ url('/customer/dashboard') }}">Home</a> --}}
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/dashboard') }}#produk">Product</a>
+                                            <a href="{{ url('/dashboard') }}#produk">Product</a>
+                                            {{-- <a href="{{ url('/#produk') }}">Product</a> --}}
                                         </li>
                                         <li class="drop-holder">
-                                            <a href="{{ url('/customer/education') }}">Education</a>
+                                            <a href="{{ url('/education') }}">Education</a>
+                                            {{-- <a href="{{ url('/education') }}">Education</a> --}}
                                         </li>
                                         <li class="drop-holder">
                                             <a href="{{ url('/customer/dashboard') }}#testimoni">Testimonies</a>
+                                            {{-- <a href="{{ url('/#testimoni') }}">Testimonies</a> --}}
                                         </li>
                                         <li class="drop-holder">
                                             <a href="{{ url('/customer/contact') }}">Contact</a>
+                                            {{-- <a href="{{ url('/contact') }}">Contact</a> --}}
                                         </li>
                                         <li class="drop-holder">
                                             <a href="{{ url('/customer/history') }}">History</a>
+                                            {{-- <a href="{{ url('/history') }}">History</a> --}}
                                         </li>
                                     </ul>
                                 </nav>
@@ -129,7 +135,7 @@
                             <div class="col-lg-3 col-6">
 
                                 <a href="{{ url('/customer/dashboard') }}" class="header-logo">
-                                    <img src="{{ asset('customer/img/logo.png') }}" alt="Header Logo">
+                                    {{-- <img src="{{ asset('customer/img/logo.png') }}" alt="Header Logo"> --}}
                                 </a>
 
                             </div>
