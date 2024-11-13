@@ -277,8 +277,8 @@ return [
         //'ka'          => ['name' => 'Georgian',               'script' => 'Geor', 'native' => 'ქართული', 'regional' => 'ka_GE'],
         //'byn'         => ['name' => 'Blin',                   'script' => 'Ethi', 'native' => 'ብሊን', 'regional' => 'byn_ER'],
         //'tig'         => ['name' => 'Tigre',                  'script' => 'Ethi', 'native' => 'ትግረ', 'regional' => 'tig_ER'],
-        //'ti'          => ['name' => 'Tigrinya',               'script' => 'Ethi', 'native' => 'ትግርኛ', 'regional' => 'ti_ET'],
-        //'am'          => ['name' => 'Amharic',                'script' => 'Ethi', 'native' => 'አማርኛ', 'regional' => 'am_ET'],
+        'ti'          => ['name' => 'Tigrinya',               'script' => 'Ethi', 'native' => 'ትግርኛ', 'regional' => 'ti_ET'],
+        'am'          => ['name' => 'Amharic',                'script' => 'Ethi', 'native' => 'አማርኛ', 'regional' => 'am_ET'],
         //'wal'         => ['name' => 'Wolaytta',               'script' => 'Ethi', 'native' => 'ወላይታቱ', 'regional' => 'wal_ET'],
         //'chr'         => ['name' => 'Cherokee',               'script' => 'Cher', 'native' => 'ᏣᎳᎩ', 'regional' => ''],
         //'iu'          => ['name' => 'Inuktitut (Canadian Aboriginal Syllabics)', 'script' => 'Cans', 'native' => 'ᐃᓄᒃᑎᑐᑦ', 'regional' => 'iu_CA'],
@@ -295,7 +295,7 @@ return [
         //'ii'          => ['name' => 'Sichuan Yi',             'script' => 'Yiii', 'native' => 'ꆈꌠꉙ', 'regional' => ''],
         //'vai'         => ['name' => 'Vai (Vai)',              'script' => 'Vaii', 'native' => 'ꕙꔤ', 'regional' => ''],
         //'jv-Java'     => ['name' => 'Javanese (Javanese)',    'script' => 'Java', 'native' => 'ꦧꦱꦗꦮ', 'regional' => ''],
-        //'ko'          => ['name' => 'Korean',                 'script' => 'Hang', 'native' => '한국어', 'regional' => 'ko_KR'],
+        'ko'          => ['name' => 'Korean',                 'script' => 'Hang', 'native' => '한국어', 'regional' => 'ko_KR'],
     ],
 
     // Requires middleware `LaravelSessionRedirect.php`.
